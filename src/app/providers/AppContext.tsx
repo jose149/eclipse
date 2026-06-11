@@ -3,6 +3,7 @@
 import { createContext, useContext, useState } from "react";
 
 type Language = "es" | "en";
+
 export type Tab = "home" | "information" | "dresscode";
 
 type AppContextType = {
