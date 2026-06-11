@@ -3,12 +3,12 @@
 import {
   Box,
   Button,
-  MenuItem,
-  Select,
   Tab,
   Tabs,
   type SelectChangeEvent,
 } from "@mui/material";
+import Select from "@mui/material/Select";
+import MenuItem from "@mui/material/MenuItem";
 import { useAppContext } from "../../providers/AppContext";
 
 type TabValue = "home" | "information" | "dresscode";
@@ -213,14 +213,16 @@ export default function Header() {
               },
             }}
             MenuProps={{
-              PaperProps: {
-                sx: {
-                  mt: 1,
-                  borderRadius: 3,
-                  border: "1px solid rgba(185, 150, 91, 0.18)",
-                  boxShadow: "0 18px 50px rgba(16, 34, 53, 0.12)",
-                  backgroundColor: "#FFFFFF",
-                  color: "#102235",
+              slotProps: {
+                paper: {
+                  sx: {
+                    mt: 1,
+                    borderRadius: 3,
+                    border: "1px solid rgba(185, 150, 91, 0.18)",
+                    boxShadow: "0 18px 50px rgba(16, 34, 53, 0.12)",
+                    backgroundColor: "#FFFFFF",
+                    color: "#102235",
+                  },
                 },
               },
             }}
