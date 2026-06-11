@@ -41,3 +41,4 @@ Logo en el footer
     Link 2: linkea a un form externo
 2 idiomas
 Galería: UI para mostrarla y para añadirlas.
+Contraseña
