@@ -63,7 +63,7 @@ export default function DressCode() {
   return (
     <Box component="section" id="dress-code" sx={{ py: 8 }}>
       <Container maxWidth="lg">
-        <Typography variant="overline" color="primary">
+        <Typography variant="overline" color="primary" component="p">
           Link 3
         </Typography>
 
@@ -71,90 +71,66 @@ export default function DressCode() {
           EoW Vibes
         </Typography>
 
-        <Typography variant="h5" sx={{ mb: 3 }}>
+        <Typography variant="h5" component="h3" sx={{ mb: 3 }}>
           Inspiración & Dress Code
         </Typography>
 
-        <Typography paragraph>
+        <Typography variant="body1" component="p" sx={{ mb: 2 }}>
           Nadie sabe qué va a ocurrir, pero todo el mundo tiene una teoría.
         </Typography>
 
-        <Typography paragraph>
+        <Typography variant="body1" component="p" sx={{ mb: 2 }}>
           Algunos creen que comienza una nueva era. Otros creen que todo es una
           exageración. Algunos buscan una explicación científica. Otros una
           explicación espiritual.
         </Typography>
 
-        <Typography paragraph>
+        <Typography variant="body1" component="p" sx={{ mb: 2 }}>
           Algunos han salido corriendo con lo puesto. Y algunos simplemente han
           decidido vestirse para la ocasión.
         </Typography>
 
-        {/* PERSONAJES */}
-
-        <Typography variant="h4" sx={{ mt: 6, mb: 3 }}>
+        <Typography variant="h4" component="h3" sx={{ mt: 6, mb: 3 }}>
           Puede que aparezcan...
         </Typography>
 
         <Grid container spacing={2}>
           {characters.map((character) => (
             <Grid size={{ xs: 12, sm: 6, md: 4 }} key={character}>
-              <Card>
+              <Card sx={{ height: "100%" }}>
                 <CardContent>
-                  <Typography>{character}</Typography>
+                  <Typography variant="body1" component="p">
+                    {character}
+                  </Typography>
                 </CardContent>
               </Card>
             </Grid>
           ))}
         </Grid>
 
-        {/* INSPIRACIÓN */}
-
         <Paper sx={{ mt: 6, p: 4 }}>
-          <Typography variant="h4" gutterBottom>
+          <Typography variant="h4" component="h3" gutterBottom>
             Inspiración visual
           </Typography>
 
-          <Box
-            sx={{
-              display: "flex",
-              flexWrap: "wrap",
-              gap: 1,
-              mt: 2,
-            }}
-          >
+          <Box sx={{ display: "flex", flexWrap: "wrap", gap: 1, mt: 2 }}>
             {inspiration.map((item) => (
               <Chip key={item} label={item} />
             ))}
           </Box>
         </Paper>
 
-        {/* COLORES */}
-
         <Paper sx={{ mt: 4, p: 4 }}>
-          <Typography variant="h4" gutterBottom>
+          <Typography variant="h4" component="h3" gutterBottom>
             Paleta de colores
           </Typography>
 
-          <Box
-            sx={{
-              display: "flex",
-              flexWrap: "wrap",
-              gap: 1,
-              mt: 2,
-            }}
-          >
+          <Box sx={{ display: "flex", flexWrap: "wrap", gap: 1, mt: 2 }}>
             {colors.map((color) => (
-              <Chip
-                key={color}
-                label={color}
-                variant="outlined"
-              />
+              <Chip key={color} label={color} variant="outlined" />
             ))}
           </Box>
         </Paper>
-
-        {/* SI / NO */}
 
         <Grid container spacing={3} sx={{ mt: 4 }}>
           <Grid size={{ xs: 12, md: 6 }}>
@@ -167,16 +143,19 @@ export default function DressCode() {
               <CardContent>
                 <Typography
                   variant="h4"
+                  component="h3"
                   color="success.main"
                   gutterBottom
                 >
                   ✔ La END OF THE WORLD PARTY dice SÍ a:
                 </Typography>
 
-                <Box component="ul" sx={{ pl: 3 }}>
+                <Box component="ul" sx={{ pl: 3, mb: 0 }}>
                   {yesList.map((item) => (
                     <li key={item}>
-                      <Typography>{item}</Typography>
+                      <Typography variant="body1" component="span">
+                        {item}
+                      </Typography>
                     </li>
                   ))}
                 </Box>
@@ -194,16 +173,19 @@ export default function DressCode() {
               <CardContent>
                 <Typography
                   variant="h4"
+                  component="h3"
                   color="error.main"
                   gutterBottom
                 >
                   ✘ La END OF THE WORLD PARTY dice NO WAY a:
                 </Typography>
 
-                <Box component="ul" sx={{ pl: 3 }}>
+                <Box component="ul" sx={{ pl: 3, mb: 0 }}>
                   {noList.map((item) => (
                     <li key={item}>
-                      <Typography>{item}</Typography>
+                      <Typography variant="body1" component="span">
+                        {item}
+                      </Typography>
                     </li>
                   ))}
                 </Box>
@@ -221,9 +203,9 @@ export default function DressCode() {
               "linear-gradient(135deg, rgba(255,255,255,0.05), rgba(255,255,255,0.02))",
           }}
         >
-          <Typography variant="h5" sx={{ fontStyle: "italic" }}>
-            Y sí, las túnicas de secta están permitidas,
-            siempre que sean bonitas y parezcan de Missoni.
+          <Typography variant="h5" component="p" sx={{ fontStyle: "italic" }}>
+            Y sí, las túnicas de secta están permitidas, siempre que sean
+            bonitas y parezcan de Missoni.
           </Typography>
         </Paper>
       </Container>
