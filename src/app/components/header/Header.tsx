@@ -3,7 +3,7 @@
 import { Tabs, Tab, Select, MenuItem } from "@mui/material";
 import { useAppContext } from "../../providers/AppContext";
 
-const tabValues = ["home", "link1", "link2", "link3"] as const;
+const tabValues = ["home", "informacion", "dresscode"] as const;
 
 export default function Header() {
   const { language, setLanguage, activeTab, setActiveTab } = useAppContext();
@@ -15,9 +15,8 @@ export default function Header() {
         onChange={(_, newValue) => setActiveTab(newValue)}
       >
         <Tab label="Inicio" value="home" />
-        <Tab label="Sección 1" value="link1" />
-        <Tab label="Sección 2" value="link2" />
-        <Tab label="Sección 3" value="link3" />
+        <Tab label="información" value="information" />
+        <Tab label="Dress Code" value="dresscode" />
       </Tabs>
 
       <Select

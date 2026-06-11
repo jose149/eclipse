@@ -1,38 +1,38 @@
-import "./Banner.css";
+import "./Home.css";
 
-export default function Banner() {
+export default function Home() {
   return (
-    <section className="banner">
-      <div className="banner__content">
-        <h1 className="banner__title">
+    <section className="home">
+      <div className="home__content">
+        <h1 className="home__title">
           The End of the World Party
         </h1>
-        <p className="banner__eyebrow">Mhares · 12 de agosto de 2026</p>
+        <p className="home__eyebrow">Mhares · 12 de agosto de 2026</p>
 
-        <p className="banner__intro">
+        <p className="home__intro">
           Estimados amig@s,
         </p>
 
-        <p className="banner__intro">
+        <p className="home__intro">
           Sólo quedan dos meses para el clímax que supondrá el primer eclipse
           solar total en la España continental en 114 años. Sin duda será un
           momento mágico y trascendental para nuestra generación, y merece una
           celebración a lo grande.
         </p>
 
-        <div className="banner__actions">
-          <a href="#eclipse-info" className="banner__link">
+        <div className="home__actions">
+          <a href="#eclipse-info" className="home__link">
             Info eclipse
           </a>
 
-          <p className="banner__intro">
+          <p className="home__intro">
             Con tal de ultimar todos los detalles los Buades Bros os pedimos por favor que 
             rellenéis el siguiente formulario 
             <a
               href="https://URL_DEL_FORMULARIO.com"
               target="_blank"
               rel="noopener noreferrer"
-              className="banner__button"
+              className="home__button"
             >
               Rellenar formulario
             </a>
@@ -43,7 +43,7 @@ export default function Banner() {
           
         </div>
 
-        <div className="banner__schedule">
+        <div className="home__schedule">
           <div>
             <h2>11 de agosto</h2>
             <p>
@@ -77,12 +77,12 @@ export default function Banner() {
           </div>
         </div>
 
-        <p className="banner__note">
+        <p className="home__note">
           Habrá cabinas para quien necesite un cambio de vestuario integral y la intimidad 
           así lo requiera 
         </p>
         
-        <p className="banner__note">
+        <p className="home__note">
           Os recordamos que la invitación es personal, nominal e intransferible, y las plazas 
           muy limitadas ya que cada hermano tiene su cupo. Si al final no pudierais asistir 
           por favor hacédnoslo saber cuánto antes 
