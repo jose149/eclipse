@@ -59,3 +59,12 @@ Títulos en azul profundo
 Detalles en champagne
 Texto secundario en gris oliva/taupe
 Botones tipo reserva premium
+
+
+Todo de detalles:
+Header con el tab seleccionado marron tapando el texto
+Header no sticky
+Añadir link del botón formulario
+Añadir selección de idioma
+Banderitas
+
