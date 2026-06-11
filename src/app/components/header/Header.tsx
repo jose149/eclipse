@@ -1,5 +1,6 @@
 "use client";
 
+import type { SyntheticEvent } from "react";
 import {
   Box,
   Button,
@@ -9,6 +10,7 @@ import {
 } from "@mui/material";
 import Select from "@mui/material/Select";
 import MenuItem from "@mui/material/MenuItem";
+import { useTranslation } from "react-i18next";
 import { useAppContext } from "../../providers/AppContext";
 
 type TabValue = "home" | "information" | "dresscode";
@@ -18,42 +20,31 @@ const FORM_URL = "https://URL_DEL_FORMULARIO.com";
 
 const tabs: {
   value: TabValue;
-  label: {
-    es: string;
-    en: string;
-  };
+  translationKey: string;
   targetId: string;
 }[] = [
   {
     value: "home",
-    label: {
-      es: "Inicio",
-      en: "Home",
-    },
+    translationKey: "nav.home",
     targetId: "home",
   },
   {
     value: "information",
-    label: {
-      es: "Información",
-      en: "Information",
-    },
+    translationKey: "nav.information",
     targetId: "eclipse-info",
   },
   {
     value: "dresscode",
-    label: {
-      es: "Dress Code",
-      en: "Dress Code",
-    },
+    translationKey: "nav.dressCode",
     targetId: "dress-code",
   },
 ];
 
 export default function Header() {
   const { language, setLanguage, activeTab, setActiveTab } = useAppContext();
+  const { t, i18n } = useTranslation();
 
-  const handleTabChange = (_: React.SyntheticEvent, newValue: TabValue) => {
+  const handleTabChange = (_: SyntheticEvent, newValue: TabValue) => {
     setActiveTab(newValue);
 
     const targetId = tabs.find((tab) => tab.value === newValue)?.targetId;
@@ -66,7 +57,53 @@ export default function Header() {
   };
 
   const handleLanguageChange = (event: SelectChangeEvent) => {
-    setLanguage(event.target.value as Language);
+    const newLanguage = event.target.value as Language;
+
+    setLanguage(newLanguage);
+    void i18n.changeLanguage(newLanguage);
+
+    if (typeof window !== "undefined") {
+      window.localStorage.setItem("language", newLanguage);
+      document.documentElement.lang = newLanguage;
+    }
+  };
+
+  const tabsStyles = {
+    "& .MuiTabs-indicator": {
+      height: 1,
+      backgroundColor: "#B9965B",
+    },
+
+    "& .MuiTab-root": {
+      color: "#6F756F",
+      textTransform: "uppercase",
+      borderRadius: 999,
+      backgroundColor: "transparent !important",
+      transition: "color 0.2s ease, background-color 0.2s ease",
+    },
+
+    "& .MuiTab-root:hover": {
+      color: "#102235",
+      backgroundColor: "rgba(185, 150, 91, 0.06) !important",
+    },
+
+    "& .MuiButtonBase-root.MuiTab-root.Mui-selected": {
+      color: "#102235",
+      backgroundColor: "transparent !important",
+    },
+
+    "& .MuiButtonBase-root.MuiTab-root.Mui-selected:hover": {
+      color: "#102235",
+      backgroundColor: "rgba(185, 150, 91, 0.06) !important",
+    },
+
+    "& .MuiButtonBase-root.MuiTab-root.Mui-focusVisible": {
+      backgroundColor: "rgba(185, 150, 91, 0.06) !important",
+    },
+
+    "& .MuiTouchRipple-root": {
+      display: "none",
+    },
   };
 
   return (
@@ -131,30 +168,22 @@ export default function Header() {
             minHeight: 40,
             display: { xs: "none", md: "flex" },
 
-            "& .MuiTabs-indicator": {
-              height: 1,
-              backgroundColor: "#B9965B",
-            },
+            ...tabsStyles,
 
             "& .MuiTab-root": {
+              ...tabsStyles["& .MuiTab-root"],
               minHeight: 40,
               px: 2.25,
-              color: "#6F756F",
               fontSize: "0.82rem",
               fontWeight: 500,
               letterSpacing: "0.08em",
-              textTransform: "uppercase",
-            },
-
-            "& .Mui-selected": {
-              color: "#102235",
             },
           }}
         >
           {tabs.map((tab) => (
             <Tab
               key={tab.value}
-              label={tab.label[language]}
+              label={t(tab.translationKey)}
               value={tab.value}
               disableRipple
             />
@@ -177,7 +206,6 @@ export default function Header() {
             variant="outlined"
             renderValue={(value) => {
               const selectedLanguage = value as Language;
-
               return selectedLanguage === "es" ? "🇪🇸 ES" : "🇬🇧 EN";
             }}
             sx={{
@@ -259,7 +287,7 @@ export default function Header() {
               },
             }}
           >
-            {language === "es" ? "Formulario" : "Form"}
+            {t("nav.form")}
           </Button>
         </Box>
       </Box>
@@ -284,30 +312,22 @@ export default function Header() {
           boxShadow: "0 14px 36px rgba(16, 34, 53, 0.08)",
           backdropFilter: "blur(18px)",
 
-          "& .MuiTabs-indicator": {
-            height: 1,
-            backgroundColor: "#B9965B",
-          },
+          ...tabsStyles,
 
           "& .MuiTab-root": {
+            ...tabsStyles["& .MuiTab-root"],
             minHeight: 42,
             px: 1.75,
-            color: "#6F756F",
             fontSize: "0.74rem",
             fontWeight: 600,
             letterSpacing: "0.06em",
-            textTransform: "uppercase",
-          },
-
-          "& .Mui-selected": {
-            color: "#102235",
           },
         }}
       >
         {tabs.map((tab) => (
           <Tab
             key={tab.value}
-            label={tab.label[language]}
+            label={t(tab.translationKey)}
             value={tab.value}
             disableRipple
           />

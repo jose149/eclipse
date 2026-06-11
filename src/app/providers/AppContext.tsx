@@ -1,36 +1,56 @@
 "use client";
 
-import { createContext, useContext, useState } from "react";
+import {
+  createContext,
+  useCallback,
+  useContext,
+  useMemo,
+  useState,
+  type ReactNode,
+} from "react";
+import { useTranslation } from "react-i18next";
+import type { Language } from "../i18n";
 
-type Language = "es" | "en";
+type TabValue = "home" | "information" | "dresscode";
 
-export type Tab = "home" | "information" | "dresscode";
-
-type AppContextType = {
+type AppContextValue = {
   language: Language;
   setLanguage: (language: Language) => void;
-  activeTab: Tab;
-  setActiveTab: (tab: Tab) => void;
+  activeTab: TabValue;
+  setActiveTab: (tab: TabValue) => void;
 };
 
-const AppContext = createContext<AppContextType | null>(null);
+const AppContext = createContext<AppContextValue | null>(null);
 
-export function AppProvider({ children }: { children: React.ReactNode }) {
-  const [language, setLanguage] = useState<Language>("es");
-  const [activeTab, setActiveTab] = useState<Tab>("home");
+export function AppProvider({ children }: { children: ReactNode }) {
+  const { i18n } = useTranslation();
+  const [activeTab, setActiveTab] = useState<TabValue>("home");
 
-  return (
-    <AppContext.Provider
-      value={{
-        language,
-        setLanguage,
-        activeTab,
-        setActiveTab,
-      }}
-    >
-      {children}
-    </AppContext.Provider>
+  const currentI18nLanguage = i18n.resolvedLanguage ?? i18n.language ?? "es";
+  const language: Language = currentI18nLanguage.startsWith("en") ? "en" : "es";
+
+  const setLanguage = useCallback(
+    (newLanguage: Language) => {
+      if (typeof window !== "undefined") {
+        window.localStorage.setItem("language", newLanguage);
+      }
+
+      void i18n.changeLanguage(newLanguage);
+    },
+    [i18n]
   );
+
+  const value = useMemo(
+    () => ({
+      language,
+      setLanguage,
+      activeTab,
+      setActiveTab,
+    }),
+    [language, setLanguage, activeTab]
+  );
+
+  return <AppContext.Provider value={value}>{children}</AppContext.Provider>;
 }
 
 export function useAppContext() {

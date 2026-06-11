@@ -1,97 +1,62 @@
+"use client";
+
+import { useTranslation } from "react-i18next";
 import "./DressCode.css";
 
-const characters = [
-  "Navegantes de recreo queriendo volver a tierra",
-  "Hippies cósmicos",
-  "Milicias veganas",
-  "Gurús solares",
-  "Autoridades locales",
-  "Escapados de un after de Magaluf",
-  "Cazadores de ovnis",
-  "Terapeutas alternativos.",
-  "Hare Krishnas, franciscanos y clarisas",
-  "Millonarios organizados con pasajes al nuevo mundo",
-  "Adivinos bronceados",
-  "Sectarios milenaristas",
-  "El padre Ángel",
-  "O una batukada.",
-];
-
-const inspiration = [
-  "Eclipses.",
-  "Cielos nocturnos.",
-  "Glamour cósmico.",
-  "Decadencia estival.",
-  "Lujo mediterráneo.",
-  "El fin del mundo, pero con buen gusto.",
-];
-
-const colors = [
-  "Negro solar.",
-  "Blanco roto.",
-  "Plata.",
-  "Azul medianoche.",
-  "Arena.",
-  "Reflejos metálicos.",
-];
-
-const yesList = [
-  "Looks elegantes con un punto extraño.",
-  "Sunglasses de noche.",
-  "Brillos sutiles.",
-  'Estética "rich people at the end of civilization".',
-  "Detalles astrales, futuristas o discretamente apocalípticos",
-];
-
-const noList = [
-  "Disfraces completos.",
-  "Cosplay del fin del mundo.",
-  "Maquillaje temático exagerado.",
-  "Máscaras",
-];
-
 export default function DressCode() {
+  const { t } = useTranslation();
+
+  const intro = t("dressCode.intro", {
+    returnObjects: true,
+  }) as string[];
+
+  const characters = t("dressCode.characters", {
+    returnObjects: true,
+  }) as string[];
+
+  const inspiration = t("dressCode.inspiration", {
+    returnObjects: true,
+  }) as string[];
+
+  const colors = t("dressCode.colors", {
+    returnObjects: true,
+  }) as string[];
+
+  const yesList = t("dressCode.yes.items", {
+    returnObjects: true,
+  }) as string[];
+
+  const noList = t("dressCode.no.items", {
+    returnObjects: true,
+  }) as string[];
+
   return (
     <section id="dress-code" className="dress-code">
       <div className="dress-code__inner">
         <header className="dress-code__header">
-          <p className="dress-code__eyebrow">LINK 3</p>
+          <p className="dress-code__eyebrow">{t("dressCode.eyebrow")}</p>
 
-          <h2 className="dress-code__title">EoW Vibes</h2>
+          <h2 className="dress-code__title">{t("dressCode.title")}</h2>
 
-          <p className="dress-code__subtitle">
-            INSPIRACIÓN & DRESS CODE
-          </p>
+          <p className="dress-code__subtitle">{t("dressCode.subtitle")}</p>
 
           <div className="dress-code__intro">
-            <p>
-              Nadie sabe qué va a ocurrir, pero todo el mundo tiene una teoría.
-            </p>
-
-            <p>
-              Algunos creen que comienza una nueva era.
-              <br />
-              Otros creen que todo es una exageración.
-              <br />
-              Algunos buscan una explicación científica.
-              <br />
-              Otros una explicación espiritual.
-            </p>
-
-            <p>
-              Algunos han salido corriendo con lo puesto.
-              <br />Y algunos simplemente han decidido vestirse para la ocasión.
-            </p>
+            {intro.map((paragraph) => (
+              <p key={paragraph}>{paragraph}</p>
+            ))}
           </div>
         </header>
 
-        <section className="dress-code__characters" aria-label="Puede que aparezcan">
+        <section
+          className="dress-code__characters"
+          aria-label={t("dressCode.charactersTitle")}
+        >
           <div className="dress-code__section-heading">
             <p className="dress-code__section-label">
-              Así que, por si te inspiran algo
+              {t("dressCode.charactersLabel")}
             </p>
 
-            <h3>Puede que aparezcan:</h3>
+            <h3>{t("dressCode.charactersTitle")}</h3>
           </div>
 
           <div className="dress-code__character-grid">
@@ -105,16 +70,14 @@ export default function DressCode() {
         </section>
 
         <section className="dress-code__concept-card">
-          <p>
-            Pero a la hora de vestirse, la idea no es replicar personajes. La
-            idea es parecer personas que han recibido exactamente la misma
-            noticia y reaccionan de formas completamente distintas.
-          </p>
+          <p>{t("dressCode.concept")}</p>
         </section>
 
         <section className="dress-code__guides">
           <article className="dress-code__guide-card">
-            <p className="dress-code__section-label">Inspiración visual:</p>
+            <p className="dress-code__section-label">
+              {t("dressCode.inspirationLabel")}
+            </p>
 
             <div className="dress-code__chips">
               {inspiration.map((item) => (
@@ -126,7 +89,9 @@ export default function DressCode() {
           </article>
 
           <article className="dress-code__guide-card dress-code__guide-card--palette">
-            <p className="dress-code__section-label">Colores:</p>
+            <p className="dress-code__section-label">
+              {t("dressCode.colorsLabel")}
+            </p>
 
             <div className="dress-code__color-list">
               {colors.map((color) => (
@@ -140,10 +105,13 @@ export default function DressCode() {
 
         <section className="dress-code__rules">
           <article className="dress-code__rule-card dress-code__rule-card--yes">
-            <p className="dress-code__rule-kicker">La</p>
+            <p className="dress-code__rule-kicker">
+              {t("dressCode.yes.kicker")}
+            </p>
 
             <h3>
-              END OF THE WORLD PARTY <span>dice SÍ a:</span>
+              {t("dressCode.yes.title")}{" "}
+              <span>{t("dressCode.yes.subtitle")}</span>
             </h3>
 
             <ul>
@@ -154,10 +122,13 @@ export default function DressCode() {
           </article>
 
           <article className="dress-code__rule-card dress-code__rule-card--no">
-            <p className="dress-code__rule-kicker">La</p>
+            <p className="dress-code__rule-kicker">
+              {t("dressCode.no.kicker")}
+            </p>
 
             <h3>
-              END OF THE WORLD PARTY <span>dice NO WAY a:</span>
+              {t("dressCode.no.title")}{" "}
+              <span>{t("dressCode.no.subtitle")}</span>
             </h3>
 
             <ul>
@@ -169,10 +140,7 @@ export default function DressCode() {
         </section>
 
         <footer className="dress-code__closing">
-          <p>
-            Y sí, las túnicas de secta están permitidas, siempre que sean bonitas
-            y parezcan de Missoni
-          </p>
+          <p>{t("dressCode.closing")}</p>
         </footer>
       </div>
     </section>
