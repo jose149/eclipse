@@ -40,5 +40,15 @@ Logo en el footer
 3 tabs Links SPA
     Link 2: linkea a un form externo
 2 idiomas
-Galería: UI para mostrarla y para añadirlas.
 Contraseña
+
+Maquetación
+Estilos
+Responsive
+Funcionamiento y reactividad
+
+Header con los tabs e idioma
+Home con titulo e intro || Link 1 content || Link 2 content || Link 3 content
+Footer
+
+
