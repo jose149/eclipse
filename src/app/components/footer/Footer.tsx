@@ -1,15 +1,23 @@
-import styles from "@/app/page.module.css";
+import Image from "next/image";
+import "./Footer.css";
 
-export default function Home() {
+export default function Footer() {
   return (
-    <footer className={styles.page}>
-      <img
-        className={styles.logo}
-        src="/logo.jpg"
-        alt="Next.js logo"
-        width={100}
-        height={20}
-      />
+    <footer className="footer">
+      <div className="footer__inner">
+        <div className="footer__divider" />
+
+        <div className="footer__logo-shell">
+          <Image
+            src="/logo.jpg"
+            alt="Mhares Sea Club"
+            width={180}
+            height={80}
+            className="footer__logo"
+            priority={false}
+          />
+        </div>
+      </div>
     </footer>
   );
 }
