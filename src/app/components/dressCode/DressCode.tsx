@@ -63,9 +63,6 @@ export default function DressCode() {
   return (
     <Box component="section" id="dress-code" sx={{ py: 8 }}>
       <Container maxWidth="lg">
-        <Typography variant="overline" color="primary" component="p">
-          Link 3
-        </Typography>
 
         <Typography variant="h3" component="h2" gutterBottom>
           EoW Vibes

@@ -2,7 +2,7 @@ import "./Home.css";
 
 export default function Home() {
   return (
-    <section className="home">
+    <section id="home" className="home">
       <div className="home__content">
         <h1 className="home__title">
           The End of the World Party

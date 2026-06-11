@@ -51,4 +51,11 @@ Header con los tabs e idioma
 Home con titulo e intro || Link 1 content || Link 2 content || Link 3 content
 Footer
 
-
+Fondo claro cálido
+Header flotante translúcido
+Hero con mucho aire
+Cards blancas/marfil con borde champagne muy sutil
+Títulos en azul profundo
+Detalles en champagne
+Texto secundario en gris oliva/taupe
+Botones tipo reserva premium

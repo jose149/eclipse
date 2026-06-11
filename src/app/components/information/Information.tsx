@@ -26,9 +26,6 @@ export default function Information() {
   return (
     <Box component="section" id="eclipse-info" sx={{ py: 8 }}>
       <Container maxWidth="md">
-        <Typography variant="overline" color="primary" component="p">
-          Link 1
-        </Typography>
 
         <Typography variant="h3" component="h2" gutterBottom>
           Información sobre el Eclipse Solar de 12 de agosto de 2026
