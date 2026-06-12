@@ -1,109 +1,155 @@
 "use client";
 
-import { useEffect, useState, type FormEvent, type ReactNode } from "react";
+import {
+  useEffect,
+  useState,
+  type ChangeEvent,
+  type FormEvent,
+  type ReactNode,
+} from "react";
+import { useTranslation } from "react-i18next";
+import { useAppContext } from "../../providers/AppContext";
 import "./PasswordGate.css";
 
-const ACCESS_PASSWORD = "Eclipse2026";
+type Language = "es" | "en";
+
+const PASSWORD = "Eclipse2026";
 const STORAGE_KEY = "eow-party-access-granted";
 
-type PasswordGateProps = {
-  children: ReactNode;
+const copy = {
+  es: {
+    brand: "EoW Party",
+    eyebrow: "Invitación privada",
+    title: "The End of the World Party",
+    subtitle: "Mhares · 12 agosto 2026",
+    text: "Esta web contiene información reservada para invitados. Introduce la contraseña para acceder.",
+    label: "Contraseña",
+    placeholder: "Introduce la contraseña",
+    button: "Acceder",
+    error: "La contraseña no es correcta. Inténtalo de nuevo.",
+    languageLabel: "Idioma",
+  },
+  en: {
+    brand: "EoW Party",
+    eyebrow: "Private invitation",
+    title: "The End of the World Party",
+    subtitle: "Mhares · August 12, 2026",
+    text: "This website contains information reserved for guests. Enter the password to access.",
+    label: "Password",
+    placeholder: "Enter password",
+    button: "Enter",
+    error: "The password is not correct. Please try again.",
+    languageLabel: "Language",
+  },
 };
 
-export default function PasswordGate({ children }: PasswordGateProps) {
+export default function PasswordGate({ children }: { children: ReactNode }) {
+  const { language, setLanguage } = useAppContext();
+  const { i18n } = useTranslation();
+
   const [password, setPassword] = useState("");
-  const [isUnlocked, setIsUnlocked] = useState(false);
-  const [hasCheckedStorage, setHasCheckedStorage] = useState(false);
+  const [hasAccess, setHasAccess] = useState(false);
   const [error, setError] = useState("");
 
-  useEffect(() => {
-    const accessGranted = window.sessionStorage.getItem(STORAGE_KEY) === "true";
+  const currentCopy = copy[language];
 
-    setIsUnlocked(accessGranted);
-    setHasCheckedStorage(true);
+  useEffect(() => {
+    if (typeof window === "undefined") return;
+
+    const storedAccess = window.sessionStorage.getItem(STORAGE_KEY);
+
+    if (storedAccess === "true") {
+      setHasAccess(true);
+    }
   }, []);
 
-  useEffect(() => {
-    if (!hasCheckedStorage || isUnlocked) return;
+  const handleLanguageChange = (event: ChangeEvent<HTMLSelectElement>) => {
+    const newLanguage = event.target.value as Language;
 
-    const previousOverflow = document.body.style.overflow;
-    document.body.style.overflow = "hidden";
+    setLanguage(newLanguage);
+    void i18n.changeLanguage(newLanguage);
 
-    return () => {
-      document.body.style.overflow = previousOverflow;
-    };
-  }, [hasCheckedStorage, isUnlocked]);
+    if (typeof window !== "undefined") {
+      window.localStorage.setItem("language", newLanguage);
+      document.documentElement.lang = newLanguage;
+    }
+  };
 
   const handleSubmit = (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
 
-    if (password.trim() === ACCESS_PASSWORD) {
+    if (password.trim() === PASSWORD) {
       window.sessionStorage.setItem(STORAGE_KEY, "true");
-      setIsUnlocked(true);
+      setHasAccess(true);
       setError("");
       return;
     }
 
-    setError("Código incorrecto. Revisa mayúsculas y minúsculas.");
-    setPassword("");
+    setError(currentCopy.error);
   };
 
-  if (!hasCheckedStorage) {
-    return null;
-  }
-
-  if (isUnlocked) {
+  if (hasAccess) {
     return <>{children}</>;
   }
 
   return (
-    <div className="password-gate" role="dialog" aria-modal="true">
+    <section className="password-gate" aria-label={currentCopy.eyebrow}>
       <div className="password-gate__ambient password-gate__ambient--one" />
       <div className="password-gate__ambient password-gate__ambient--two" />
 
-      <main className="password-gate__card">
-        <div className="password-gate__eclipse" />
+      <div className="password-gate__shell">
+        <header className="password-gate__topbar">
+          <p className="password-gate__brand">{currentCopy.brand}</p>
 
-        <p className="password-gate__eyebrow">Private invitation</p>
+          <label className="password-gate__language">
+            <span className="password-gate__sr-only">
+              {currentCopy.languageLabel}
+            </span>
 
-        <h1 className="password-gate__title">
-          The End of the World Party
-        </h1>
-
-        <p className="password-gate__subtitle">
-          Mhares · August 12, 2026
-        </p>
-
-        <p className="password-gate__text">
-          Introduce el código de acceso para abrir la invitación.
-        </p>
-
-        <form className="password-gate__form" onSubmit={handleSubmit}>
-          <label className="password-gate__label" htmlFor="access-password">
-            Código de acceso
+            <select value={language} onChange={handleLanguageChange}>
+              <option value="es">🇪🇸 ES</option>
+              <option value="en">🇬🇧 EN</option>
+            </select>
           </label>
+        </header>
 
-          <input
-            id="access-password"
-            className="password-gate__input"
-            type="password"
-            value={password}
-            onChange={(event) => {
-              setPassword(event.target.value);
-              setError("");
-            }}
-            placeholder="Introduce la contraseña"
-            autoComplete="off"
-            autoFocus
-          />
+        <article className="password-gate__card">
+          <div className="password-gate__eclipse" />
 
-          {error && <p className="password-gate__error">{error}</p>}
+          <p className="password-gate__eyebrow">{currentCopy.eyebrow}</p>
 
-          <button className="password-gate__button" type="submit">
-            Acceder
-          </button>
-        </form>
-      </main>
-    </div>
+          <h1 className="password-gate__title">{currentCopy.title}</h1>
+
+          <p className="password-gate__subtitle">{currentCopy.subtitle}</p>
+
+          <p className="password-gate__text">{currentCopy.text}</p>
+
+          <form className="password-gate__form" onSubmit={handleSubmit}>
+            <label className="password-gate__label" htmlFor="event-password">
+              {currentCopy.label}
+            </label>
+
+            <input
+              id="event-password"
+              className="password-gate__input"
+              type="password"
+              value={password}
+              placeholder={currentCopy.placeholder}
+              onChange={(event) => {
+                setPassword(event.target.value);
+                setError("");
+              }}
+              autoComplete="current-password"
+            />
+
+            {error && <p className="password-gate__error">{error}</p>}
+
+            <button className="password-gate__button" type="submit">
+              {currentCopy.button}
+            </button>
+          </form>
+        </article>
+      </div>
+    </section>
   );
 }
