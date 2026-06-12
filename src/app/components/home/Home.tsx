@@ -31,13 +31,6 @@ export default function Home() {
             <p className="home__intro">{t("home.intro")}</p>
 
             <div className="home__actions">
-
-              <a
-                href="#eclipse-info"
-                className="home__button home__button--secondary"
-              >
-                {t("home.eclipseInfo")}
-              </a>
             </div>
           </div>
 
