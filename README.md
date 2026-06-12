@@ -62,13 +62,7 @@ Botones tipo reserva premium
 
 
 To do de detalles:
-Header con el tab seleccionado marron tapando el texto
-Header no sticky
-Header, abriendo el dropdown aparece linea negra a la derecha
 Añadir link del botón formulario
-Imagen del planeta
-Password
-Foto del footer menos pesada
 Revisar el responsive
 Url con el idioma*
 Banderitas*

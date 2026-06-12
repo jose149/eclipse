@@ -30,6 +30,8 @@ export default function Information() {
     returnObjects: true,
   }) as EclipseTimelineRow[];
 
+  const storyHeaderText = t("information.storyHeader.text");
+
   const stories: StoryCard[] = [
     {
       key: "anomaly",
@@ -110,6 +112,16 @@ export default function Information() {
           </aside>
         </div>
 
+        <figure className="information__eclipse-visual">
+          <div className="information__eclipse-glow" />
+
+          <img
+            src="/eclipse.png"
+            alt="Eclipse sobre el planeta Tierra"
+            className="information__eclipse-image"
+          />
+        </figure>
+
         <div className="information__divider" />
 
         <div className="information__story-header">
@@ -119,7 +131,7 @@ export default function Information() {
 
           <h3>{t("information.storyHeader.title")}</h3>
 
-          <p>{t("information.storyHeader.text")}</p>
+          {storyHeaderText && <p>{storyHeaderText}</p>}
         </div>
 
         <div className="information__story-grid">

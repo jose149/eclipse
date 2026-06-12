@@ -65,13 +65,11 @@
     BlinkMacSystemFont,
     "Segoe UI",
     sans-serif;
-    overflow-x: scroll;
-    overflow-y: scroll;
-    height: 100vh;
+    overflow: visible;
 }
 
 .page section {
-  scroll-margin-top: 140px;
+  scroll-margin-top: 0px;
 }
 
 /* Sutil textura premium, casi invisible */

@@ -34,7 +34,6 @@ export default function DressCode() {
     <section id="dress-code" className="dress-code">
       <div className="dress-code__inner">
         <header className="dress-code__header">
-          <p className="dress-code__eyebrow">{t("dressCode.eyebrow")}</p>
 
           <h2 className="dress-code__title">{t("dressCode.title")}</h2>
 

@@ -172,7 +172,6 @@ const resources = {
       },
 
       dressCode: {
-        eyebrow: "LINK 3",
         title: "EoW Vibes",
         subtitle: "INSPIRACIÓN & DRESS CODE",
 

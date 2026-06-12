@@ -5,20 +5,23 @@ import Footer from "./components/footer/Footer";
 import Banner from "./components/home/Home";
 import Information from "./components/information/Information";
 import DressCode from "./components/dressCode/DressCode";
+import PasswordGate from "./components/passwordGate/PasswordGate";
 import styles from "./page.module.css";
 
 export default function Home() {
   return (
     <div className={styles.page}>
-      <Header />
+      <PasswordGate>
+        <Header />
 
-      <main className={styles.main}>
-        <Banner />
-        <Information />
-        <DressCode />
-      </main>
+        <main className={styles.main}>
+          <Banner />
+          <Information />
+          <DressCode />
+        </main>
 
-      <Footer />
+        <Footer />
+      </PasswordGate>
     </div>
   );
 }

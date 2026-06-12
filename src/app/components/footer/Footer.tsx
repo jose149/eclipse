@@ -7,16 +7,15 @@ export default function Footer() {
       <div className="footer__inner">
         <div className="footer__divider" />
 
-        <div className="footer__logo-shell">
           <Image
-            src="/logo.jpg"
+            src="/logo2.jpg"
             alt="Mhares Sea Club"
             width={180}
             height={80}
             className="footer__logo"
             priority={false}
           />
-        </div>
+
       </div>
     </footer>
   );
