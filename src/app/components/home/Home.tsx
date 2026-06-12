@@ -20,6 +20,7 @@ export default function Home() {
   return (
     <section id="home" className="home">
       <div className="home__inner">
+
         <div className="home__hero">
           <div className="home__copy">
             <p className="home__eyebrow">{t("home.eyebrow")}</p>
@@ -30,8 +31,7 @@ export default function Home() {
 
             <p className="home__intro">{t("home.intro")}</p>
 
-            <div className="home__actions">
-            </div>
+            <div className="home__actions" />
           </div>
 
           <aside className="home__event-card" aria-label={t("home.eventCard.label")}>
@@ -60,14 +60,13 @@ export default function Home() {
 
         <div className="home__message">
           <p>{t("home.message")}</p>
+
           <a
-                href={FORM_URL}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="home__button home__button--primary"
-              >
-                {t("home.formButton")}
-              </a>
+            href={FORM_URL}
+            className="home__button home__button--primary"
+          >
+            {t("home.formButton")}
+          </a>
         </div>
 
         <div className="home__schedule">

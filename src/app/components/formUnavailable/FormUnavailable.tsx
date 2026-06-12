@@ -3,6 +3,7 @@
 import type { ChangeEvent } from "react";
 import { useTranslation } from "react-i18next";
 import { useAppContext } from "../../providers/AppContext";
+import Image from "next/image";
 import "./FormUnsavailable.css";
 
 type Language = "es" | "en";
@@ -77,10 +78,18 @@ export default function FormUnavailable() {
           </label>
         </header>
 
+
         <article className="form-unavailable__card">
-          <div className="form-unavailable__mark" aria-hidden="true">
-            <span />
-          </div>
+           <div className="form-unavailable__eclipse">
+            <Image
+                src="/logo2.jpg"
+                alt="Mhares Sea Club"
+                width={180}
+                height={80}
+                className="footer__logo"
+                priority={false}
+            />
+        </div>
 
           <p className="form-unavailable__eyebrow">{currentCopy.eyebrow}</p>
 

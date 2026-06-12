@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import {
   useEffect,
   useState,
@@ -116,7 +117,17 @@ if (hasAccess) {
         </header>
 
         <article className="password-gate__card">
-          <div className="password-gate__eclipse" />
+          <div className="password-gate__eclipse">
+            <Image
+              src="/logo2.jpg"
+              alt="Mhares Sea Club"
+              width={180}
+              height={80}
+              className="footer__logo"
+              priority={false}
+            />
+          </div>
+          
 
           <p className="password-gate__eyebrow">{currentCopy.eyebrow}</p>
 
