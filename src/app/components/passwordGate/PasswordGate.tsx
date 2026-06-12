@@ -48,20 +48,18 @@ export default function PasswordGate({ children }: { children: ReactNode }) {
   const { i18n } = useTranslation();
 
   const [password, setPassword] = useState("");
-  const [hasAccess, setHasAccess] = useState(false);
+  const [hasAccess, setHasAccess] = useState<boolean | null>(null);
   const [error, setError] = useState("");
 
   const currentCopy = copy[language];
 
   useEffect(() => {
-    if (typeof window === "undefined") return;
+  if (typeof window === "undefined") return;
 
-    const storedAccess = window.sessionStorage.getItem(STORAGE_KEY);
+  const storedAccess = window.localStorage.getItem(STORAGE_KEY);
 
-    if (storedAccess === "true") {
-      setHasAccess(true);
-    }
-  }, []);
+  setHasAccess(storedAccess === "true");
+}, []);
 
   const handleLanguageChange = (event: ChangeEvent<HTMLSelectElement>) => {
     const newLanguage = event.target.value as Language;
@@ -79,7 +77,7 @@ export default function PasswordGate({ children }: { children: ReactNode }) {
     event.preventDefault();
 
     if (password.trim() === PASSWORD) {
-      window.sessionStorage.setItem(STORAGE_KEY, "true");
+      window.localStorage.setItem(STORAGE_KEY, "true");
       setHasAccess(true);
       setError("");
       return;
@@ -88,9 +86,13 @@ export default function PasswordGate({ children }: { children: ReactNode }) {
     setError(currentCopy.error);
   };
 
-  if (hasAccess) {
-    return <>{children}</>;
-  }
+  if (hasAccess === null) {
+  return null;
+}
+
+if (hasAccess) {
+  return <>{children}</>;
+}
 
   return (
     <section className="password-gate" aria-label={currentCopy.eyebrow}>
