@@ -31,14 +31,6 @@ export default function Home() {
             <p className="home__intro">{t("home.intro")}</p>
 
             <div className="home__actions">
-              <a
-                href={FORM_URL}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="home__button home__button--primary"
-              >
-                {t("home.formButton")}
-              </a>
 
               <a
                 href="#eclipse-info"
@@ -75,6 +67,14 @@ export default function Home() {
 
         <div className="home__message">
           <p>{t("home.message")}</p>
+          <a
+                href={FORM_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="home__button home__button--primary"
+              >
+                {t("home.formButton")}
+              </a>
         </div>
 
         <div className="home__schedule">
