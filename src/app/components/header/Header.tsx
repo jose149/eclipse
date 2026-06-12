@@ -296,48 +296,6 @@ export default function Header() {
           </Button>
         </Box>
       </Box>
-
-      <Tabs
-        value={activeTab}
-        onChange={handleTabChange}
-        variant="scrollable"
-        scrollButtons={false}
-        sx={{
-          pointerEvents: "auto",
-          display: { xs: "flex", md: "none" },
-          width: "calc(100% - 32px)",
-          mx: "auto",
-          mt: 1.25,
-          px: 1,
-          minHeight: 42,
-          borderRadius: 999,
-          border: "1px solid rgba(185, 150, 91, 0.18)",
-          background:
-            "linear-gradient(145deg, rgba(255,255,255,0.82), rgba(251,247,239,0.68))",
-          boxShadow: "0 14px 36px rgba(16, 34, 53, 0.08)",
-          backdropFilter: "blur(18px)",
-
-          ...tabsStyles,
-
-          "& .MuiTab-root": {
-            ...tabsStyles["& .MuiTab-root"],
-            minHeight: 42,
-            px: 1.75,
-            fontSize: "0.74rem",
-            fontWeight: 600,
-            letterSpacing: "0.06em",
-          },
-        }}
-      >
-        {tabs.map((tab) => (
-          <Tab
-            key={tab.value}
-            label={t(tab.translationKey)}
-            value={tab.value}
-            disableRipple
-          />
-        ))}
-      </Tabs>
     </Box>
   );
 }
