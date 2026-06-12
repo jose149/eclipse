@@ -61,10 +61,19 @@ Texto secundario en gris oliva/taupe
 Botones tipo reserva premium
 
 
-Todo de detalles:
+To do de detalles:
 Header con el tab seleccionado marron tapando el texto
 Header no sticky
+Header, abriendo el dropdown aparece linea negra a la derecha
 Añadir link del botón formulario
-Añadir selección de idioma
-Banderitas
+Imagen del planeta
+Password
+Foto del footer menos pesada
+Revisar el responsive
+Url con el idioma*
+Banderitas*
+
+Pedirle a Aina el link del formulario.
+Y confirmar si la URL le va bien
+
 

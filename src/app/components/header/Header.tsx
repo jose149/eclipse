@@ -72,6 +72,11 @@ export default function Header() {
     "& .MuiTabs-indicator": {
       height: 1,
       backgroundColor: "#B9965B",
+      borderRadius: "3996px",
+      opacity: 0.1,
+      fontSize: "0.74rem",
+      fontWeight: 600,
+      letterSpacing: "0.06em",
     },
 
     "& .MuiTab-root": {
@@ -133,7 +138,7 @@ export default function Header() {
           borderRadius: 999,
           border: "1px solid rgba(185, 150, 91, 0.22)",
           background:
-            "linear-gradient(145deg, rgba(255,255,255,0.82), rgba(251,247,239,0.68))",
+            "linear-gradient(145deg, rgba(255,255,255,0.72), rgba(251,247,239,0.58))",
           boxShadow: "0 18px 50px rgba(16, 34, 53, 0.10)",
           backdropFilter: "blur(18px)",
         }}
@@ -166,7 +171,7 @@ export default function Header() {
           centered
           sx={{
             minHeight: 40,
-            display: { xs: "none", md: "flex" },
+            display: { xs: "flex", md: "flex" },
 
             ...tabsStyles,
 

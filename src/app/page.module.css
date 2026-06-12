@@ -65,7 +65,9 @@
     BlinkMacSystemFont,
     "Segoe UI",
     sans-serif;
-  overflow-x: clip;
+    overflow-x: scroll;
+    overflow-y: scroll;
+    height: 100vh;
 }
 
 .page section {
