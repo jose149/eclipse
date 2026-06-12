@@ -14,7 +14,7 @@ import "./Header.css";
 type TabValue = "home" | "information" | "dresscode";
 type Language = "es" | "en";
 
-const FORM_URL = "https://URL_DEL_FORMULARIO.com";
+const FORM_URL = "/form"; // Update this URL to the actual form location when available
 
 const tabs: {
   value: TabValue;

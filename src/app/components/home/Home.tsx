@@ -3,7 +3,7 @@
 import { useTranslation } from "react-i18next";
 import "./Home.css";
 
-const FORM_URL = "https://URL_DEL_FORMULARIO.com";
+const FORM_URL = "/form"; // Update this URL to the actual form location when available
 
 type ScheduleItem = {
   time: string;
