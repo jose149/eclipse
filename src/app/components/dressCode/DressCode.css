@@ -1,13 +1,19 @@
 .dress-code {
   width: 100%;
-  padding: 112px 24px 30px;
+  padding: 42px 24px 30px;
   color: var(--color-ink);
+  display: flex;
+    flex-direction: column;
 }
 
 .dress-code__inner {
   width: 100%;
   max-width: 1180px;
   margin: 0 auto;
+}
+
+.dress-code__button {
+  margin: 80px auto 42px;
 }
 
 .dress-code__header {

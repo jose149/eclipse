@@ -1,10 +1,15 @@
 "use client";
 
 import { useTranslation } from "react-i18next";
+import { useAppContext } from "../../providers/AppContext";
 import "./DressCode.css";
+
+const DRESS_CODE_URL_ES = "/moodboard-eow-party-ES.html";
+const DRESS_CODE_URL_EN = "/moodboard-eow-party-EN.html";
 
 export default function DressCode() {
   const { t } = useTranslation();
+  const { language } = useAppContext();
 
   const intro = t("dressCode.intro", {
     returnObjects: true,
@@ -30,8 +35,18 @@ export default function DressCode() {
     returnObjects: true,
   }) as string[];
 
+
+
   return (
     <section id="dress-code" className="dress-code">
+      <a
+        href={language === "es" ? DRESS_CODE_URL_ES : DRESS_CODE_URL_EN}
+        target="_blank"
+        rel="noopener noreferrer"
+        className="home__button home__button--primary dress-code__button"
+      >
+        {t("dressCode.button")}
+      </a>
       <div className="dress-code__inner">
         <header className="dress-code__header">
 
@@ -67,80 +82,6 @@ export default function DressCode() {
             ))}
           </div>
         </section>
-
-        <section className="dress-code__concept-card">
-          <p>{t("dressCode.concept")}</p>
-        </section>
-
-        <section className="dress-code__guides">
-          <article className="dress-code__guide-card">
-            <p className="dress-code__section-label">
-              {t("dressCode.inspirationLabel")}
-            </p>
-
-            <div className="dress-code__chips">
-              {inspiration.map((item) => (
-                <span className="dress-code__chip" key={item}>
-                  {item}
-                </span>
-              ))}
-            </div>
-          </article>
-
-          <article className="dress-code__guide-card dress-code__guide-card--palette">
-            <p className="dress-code__section-label">
-              {t("dressCode.colorsLabel")}
-            </p>
-
-            <div className="dress-code__color-list">
-              {colors.map((color) => (
-                <span className="dress-code__color-pill" key={color}>
-                  {color}
-                </span>
-              ))}
-            </div>
-          </article>
-        </section>
-
-        <section className="dress-code__rules">
-          <article className="dress-code__rule-card dress-code__rule-card--yes">
-            <p className="dress-code__rule-kicker">
-              {t("dressCode.yes.kicker")}
-            </p>
-
-            <h3>
-              {t("dressCode.yes.title")}{" "}
-              <span>{t("dressCode.yes.subtitle")}</span>
-            </h3>
-
-            <ul>
-              {yesList.map((item) => (
-                <li key={item}>{item}</li>
-              ))}
-            </ul>
-          </article>
-
-          <article className="dress-code__rule-card dress-code__rule-card--no">
-            <p className="dress-code__rule-kicker">
-              {t("dressCode.no.kicker")}
-            </p>
-
-            <h3>
-              {t("dressCode.no.title")}{" "}
-              <span>{t("dressCode.no.subtitle")}</span>
-            </h3>
-
-            <ul>
-              {noList.map((item) => (
-                <li key={item}>{item}</li>
-              ))}
-            </ul>
-          </article>
-        </section>
-
-        <footer className="dress-code__closing">
-          <p>{t("dressCode.closing")}</p>
-        </footer>
       </div>
     </section>
   );

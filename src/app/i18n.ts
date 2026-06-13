@@ -36,7 +36,7 @@ const resources = {
         formButton: "Rellenar formulario",
         eclipseInfo: "Info eclipse",
         message:
-          "Con tal de ultimar todos los detalles, los Buades Bros os pedimos por favor que rellenéis el formulario y aprovechamos para daros a continuación información detallada del evento.",
+          "Con tal de ultimar todos los detalles, los Hermanos Buades os pedimos por favor que rellenéis el formulario y aprovechamos para daros a continuación información detallada del evento.",
 
         eventCard: {
           label: "Evento privado",
@@ -86,11 +86,19 @@ const resources = {
         },
 
         notes: {
-          cabins:
-            "Habrá cabinas para quien necesite un cambio de vestuario integral y la intimidad así lo requiera.",
-          invitation:
-            "Os recordamos que la invitación es personal, nominal e intransferible, y las plazas muy limitadas. Si al final no pudierais asistir, por favor hacédnoslo saber cuanto antes.",
-        },
+  amenities: {
+    title: "Habrá a disposición de todos los invitados:",
+    items: [
+      "Comida y bebida en abundancia.",
+      "Toallas de piscina y playa.",
+      "Cabinas y tocadores para el cambio de vestuario.",
+      "Servicio de guardarropa.",
+      "Gafas especiales de eclipse tematizadas. ¡La salud visual lo primero!",
+    ],
+  },
+  invitation:
+    "Os recordamos que la invitación es personal, nominal e intransferible, y las plazas son muy limitadas, ya que cada hermano tiene su cupo. Si al final no pudierais asistir, por favor hacédnoslo saber cuánto antes.",
+},
       },
 
       information: {
@@ -113,12 +121,11 @@ const resources = {
           location: "Mallorca",
           rows: [
             { phase: "Inicio eclipse parcial", time: "19:38" },
-            { phase: "Máximo eclipse", time: "20:31" },
+            { phase: "Máximo eclipse", time: "20:32" },
             {
               phase: "Duración de la oscuridad total",
               time: "1 minuto 36 segundos",
             },
-            { phase: "Fin del eclipse", time: "20:46" },
             { phase: "Puesta de sol", time: "20:48" },
           ],
         },
@@ -172,6 +179,7 @@ const resources = {
       },
 
       dressCode: {
+        button: "Dress code",
         title: "EoW Vibes",
         subtitle: "INSPIRACIÓN & DRESS CODE",
 
@@ -325,11 +333,18 @@ const resources = {
         },
 
         notes: {
-          cabins:
-            "Dressing rooms and vanity stations will be available for anyone who needs a full outfit change throughout the day, along with an all-day cloakroom service.",
-          invitation:
-            "Please note that the invitation is personal, named, and non-transferable. Places are very limited as each brother has his own allocation. If you are unable to attend, please let us know as soon as possible.",
-        },
+  amenities: {
+    title: "Available to all guests:",
+    items: [
+      "Food and drink in abundance.",
+      "Changing cabins and dressing rooms for those who need a full outfit change in private.",
+      "Coat check service.",
+      "Themed eclipse glasses. Eye health comes first!",
+    ],
+  },
+  invitation:
+    "Please note that the invitation is personal, non-transferable, and spaces are very limited, as each brother has his own quota. If you are unable to attend, please let us know as soon as possible.",
+},
       },
 
       information: {
@@ -409,6 +424,7 @@ const resources = {
       },
 
       dressCode: {
+        button: "Dress code",
         eyebrow: "LINK 3",
         title: "EoW Vibes",
         subtitle: "Inspiration & Dress Code",

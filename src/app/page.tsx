@@ -8,6 +8,7 @@ import DressCode from "./components/dressCode/DressCode";
 import PasswordGate from "./components/passwordGate/PasswordGate";
 import styles from "./page.module.css";
 
+
 export default function Home() {
   return (
     <div className={styles.page}>

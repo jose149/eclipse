@@ -6,7 +6,6 @@ export default function Footer() {
     <footer className="footer">
       <div className="footer__inner">
         <div className="footer__divider" />
-
           <Image
             src="/logo2.jpg"
             alt="Mhares Sea Club"
@@ -15,7 +14,6 @@ export default function Footer() {
             className="footer__logo"
             priority={false}
           />
-
       </div>
     </footer>
   );

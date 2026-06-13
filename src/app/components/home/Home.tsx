@@ -1,6 +1,7 @@
 "use client";
 
 import { useTranslation } from "react-i18next";
+import Image from "next/image";
 import "./Home.css";
 
 const FORM_URL = "/form"; // Update this URL to the actual form location when available
@@ -17,15 +18,27 @@ export default function Home() {
     returnObjects: true,
   }) as ScheduleItem[];
 
+  const amenitiesItems = t("home.notes.amenities.items", {
+  returnObjects: true,
+}) as string[];
+
   return (
     <section id="home" className="home">
+      <Image
+                  src="/logo3.jpg"
+                  alt="Mhares Sea Club"
+                  width={530}
+                  height={265}
+                  priority={false}
+                  style={{ marginBottom: "32px", marginTop: "32px" }}
+                />
       <div className="home__inner">
 
         <div className="home__hero">
           <div className="home__copy">
             <p className="home__eyebrow">{t("home.eyebrow")}</p>
 
-            <h1 className="home__title">{t("home.title")}</h1>
+            <h1 className="home__title">The <span className="home__highlighted">E</span>nd <span className="home__highlighted">O</span>f the <span className="home__highlighted">W</span>orld party</h1>
 
             <p className="home__lead">{t("home.lead")}</p>
 
@@ -93,10 +106,15 @@ export default function Home() {
             <h2>{t("home.schedule.day12.title")}</h2>
 
             <ul>
-              {day12Items.map((item) => (
+              {day12Items.map((item, index) => (
                 <li key={`${item.time}-${item.text}`}>
                   <strong>{item.time}</strong>
-                  <span>{item.text}</span>
+                  <span>{item.text} {index === 2 && (
+                    <a  style={{ textDecoration: 'underline' }} href={FORM_URL} className="home__schedule__link"> 
+                      Dress code
+                    </a>
+                  )}</span>
+                  
                 </li>
               ))}
             </ul>
@@ -104,10 +122,22 @@ export default function Home() {
         </div>
 
         <div className="home__notes">
-          <p>{t("home.notes.cabins")}</p>
+  <article className="home__note-card home__note-card--amenities">
+    <p className="home__note-title">
+      {t("home.notes.amenities.title")}
+    </p>
 
-          <p>{t("home.notes.invitation")}</p>
-        </div>
+    <ul className="home__amenities-list">
+      {amenitiesItems.map((item) => (
+        <li key={item}>{item}</li>
+      ))}
+    </ul>
+  </article>
+
+  <article className="home__note-card">
+    <p>{t("home.notes.invitation")}</p>
+  </article>
+</div>
       </div>
     </section>
   );

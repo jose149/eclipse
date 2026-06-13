@@ -72,4 +72,15 @@ Y confirmar si la URL le va bien
 
 end-of-the-world.com
 
+Cambio de algun texto
+
+Poner el logo en el principio (difuminado)
+EndOftheWorld majuscules EOF y centrado en movil
+Seccion 3 abre con el link y termina en batukada. A partir de ahí borrar el resto porque está en el link
+
+Chuleta del dresscode.
+3La conluencia
+
+
+
 

@@ -80,16 +80,15 @@ export default function FormUnavailable() {
 
 
         <article className="form-unavailable__card">
-           <div className="form-unavailable__eclipse">
             <Image
-                src="/logo2.jpg"
-                alt="Mhares Sea Club"
-                width={180}
-                height={80}
-                className="footer__logo"
-                priority={false}
-            />
-        </div>
+            src="/logo3.jpg"
+            alt="Mhares Sea Club"
+            width={530}
+            height={265}
+            className="main__logo"
+            priority={false}
+            style={{ marginBottom: "32px", marginTop: "32px" }}
+          />
 
           <p className="form-unavailable__eyebrow">{currentCopy.eyebrow}</p>
 

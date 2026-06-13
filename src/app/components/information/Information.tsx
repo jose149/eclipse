@@ -69,7 +69,6 @@ export default function Information() {
     <section id="eclipse-info" className="information">
       <div className="information__inner">
         <div className="information__header">
-          <p className="information__eyebrow">{t("information.eyebrow")}</p>
 
           <h2 className="information__title">
             {t("information.title")}

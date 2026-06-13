@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The End of the World Party · EoW Dress Code</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Inter:wght@300;400;500&display=swap');
+
+  :root {
+    --fondo: #2b3340;
+    --fondo-2: #343d4b;
+    --dorado-sol: #e8c98a;
+    --dorado-fuerte: #f0d49a;
+    --terracota: #c98a63;
+    --arena: #d9c4a0;
+    --blanco-roto: #f4efe6;
+    --texto: #ece6da;
+    --texto-tenue: #b3ad9f;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    background: var(--fondo);
+    color: var(--texto);
+    font-family: 'Inter', sans-serif;
+    font-weight: 300;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .wrap { max-width: 760px; margin: 0 auto; padding: 0 24px; }
+
+  .hero {
+    text-align: center;
+    padding: 70px 24px 56px;
+    background: linear-gradient(180deg, #2b3340 0%, #3a4250 40%, #454d5b 62%, #6d6457 82%, #7a5640 100%);
+    position: relative;
+    overflow: hidden;
+  }
+  .discos { position: relative; width: 200px; height: 230px; margin: 10px auto 34px; }
+  .disco { position: absolute; border-radius: 50%; }
+  .disco.sol {
+    width: 150px; height: 150px; top: 0; left: 25px;
+    background: radial-gradient(circle at 50% 45%, #f4e4c0, #e8c98a 70%, #d9b878 100%);
+    box-shadow: 0 0 50px 10px rgba(232,201,138,0.45);
+  }
+  .disco.luna {
+    width: 150px; height: 150px; top: 80px; left: 25px;
+    background: radial-gradient(circle at 50% 45%, rgba(90,100,115,0.55), rgba(60,68,82,0.75));
+    border: 2px solid rgba(201,138,99,0.5);
+  }
+  .hero .kicker {
+    font-size: 11px; letter-spacing: 0.4em; text-transform: uppercase;
+    color: var(--dorado-fuerte); margin-bottom: 18px;
+  }
+  .hero h1 {
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 400; font-size: 52px; line-height: 1.05;
+    letter-spacing: 0.02em; margin-bottom: 18px; color: var(--blanco-roto);
+  }
+  .hero h1 em { font-style: italic; color: var(--dorado-fuerte); }
+  .hero .sub {
+    font-size: 12px; letter-spacing: 0.22em; text-transform: uppercase;
+    color: var(--blanco-roto); font-weight: 400;
+    text-shadow: 0 1px 8px rgba(20,24,30,0.6);
+  }
+
+  .intro { padding: 52px 0 20px; }
+  .intro p {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 23px; font-weight: 400; line-height: 1.5;
+    color: var(--arena); text-align: center; font-style: italic;
+  }
+
+  .paleta { padding: 36px 0 56px; }
+  .swatches { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
+  .sw { text-align: center; }
+  .sw .dot {
+    width: 62px; height: 62px; border-radius: 50%;
+    border: 1px solid rgba(244,239,230,0.2); margin-bottom: 10px;
+  }
+  .sw span { font-size: 10px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--texto-tenue); }
+
+  .momento {
+    text-align: center; padding: 30px 0 10px;
+    border-top: 1px solid rgba(244,239,230,0.14);
+  }
+  .momento .tag {
+    font-size: 10px; letter-spacing: 0.4em; text-transform: uppercase;
+    color: var(--dorado-fuerte); margin-bottom: 14px;
+  }
+  .momento h2 {
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 400; font-size: 44px; line-height: 1.05; margin-bottom: 10px;
+    color: var(--blanco-roto);
+  }
+  .momento .hora {
+    font-size: 12px; letter-spacing: 0.16em; text-transform: uppercase;
+    color: var(--texto-tenue);
+  }
+  .momento .lead {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 21px; font-style: italic; font-weight: 400;
+    color: var(--arena); line-height: 1.5; margin-top: 22px;
+    max-width: 560px; margin-left: auto; margin-right: auto;
+  }
+
+  .looks { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; padding: 40px 0 16px; }
+  .look {
+    background: var(--fondo-2);
+    border: 1px solid rgba(232,201,138,0.16);
+    border-radius: 5px; padding: 26px 22px;
+  }
+  .look h3 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 24px; font-weight: 500; margin-bottom: 10px; color: var(--dorado-fuerte);
+  }
+  .look p { font-size: 14px; color: var(--texto); line-height: 1.65; }
+  .look .pieza {
+    display: inline-block; margin-top: 14px; font-size: 11px;
+    letter-spacing: 0.1em; text-transform: uppercase; color: #1f2630;
+    background: var(--dorado-sol);
+    border: 1px solid var(--dorado-sol); padding: 5px 12px; border-radius: 2px;
+    font-weight: 500;
+  }
+
+  .compl {
+    margin: 36px 0 8px; padding: 32px 28px;
+    background: linear-gradient(135deg, rgba(201,138,99,0.18), rgba(232,201,138,0.1));
+    border: 1px solid rgba(201,138,99,0.3); border-radius: 5px;
+  }
+  .compl .tag { font-size: 10px; letter-spacing: 0.4em; text-transform: uppercase; color: var(--dorado-fuerte); margin-bottom: 8px; }
+  .compl h2 { font-family: 'Cormorant Garamond', serif; font-weight: 400; font-size: 32px; color: var(--blanco-roto); margin-bottom: 18px; }
+  .compl-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 22px; }
+  .compl-grid h3 { font-family: 'Cormorant Garamond', serif; font-size: 21px; font-weight: 500; color: var(--dorado-fuerte); margin-bottom: 8px; }
+  .compl-grid p { font-size: 14px; color: var(--texto); }
+
+  .reglas { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; padding: 44px 0; }
+  .regla { padding: 28px 24px; border-radius: 5px; }
+  .regla.si { background: rgba(232,201,138,0.12); border: 1px solid rgba(232,201,138,0.4); }
+  .regla.no { background: rgba(81,96,111,0.25); border: 1px solid rgba(179,173,159,0.25); }
+  .regla h4 { font-family: 'Cormorant Garamond', serif; font-size: 26px; font-weight: 500; margin-bottom: 16px; }
+  .regla.si h4 { color: var(--dorado-fuerte); }
+  .regla.no h4 { color: var(--texto-tenue); }
+  .regla ul { list-style: none; }
+  .regla li { font-size: 14px; padding: 6px 0; padding-left: 22px; position: relative; }
+  .regla.si li { color: var(--texto); }
+  .regla.si li::before { content: '·'; position: absolute; left: 5px; color: var(--dorado-fuerte); font-size: 22px; line-height: 0.9; }
+  .regla.no li { color: var(--texto-tenue); }
+  .regla.no li::before { content: '×'; position: absolute; left: 3px; color: var(--texto-tenue); font-size: 13px; }
+
+  .cierre { text-align: center; padding: 50px 0 80px; }
+  .cierre p {
+    font-family: 'Cormorant Garamond', serif; font-style: italic;
+    font-size: 26px; color: var(--dorado-fuerte); line-height: 1.45;
+  }
+  .cierre .small { font-family: 'Inter'; font-style: normal; font-size: 11px; letter-spacing: 0.3em; text-transform: uppercase; color: var(--texto-tenue); margin-top: 26px; }
+
+  @media (max-width: 640px) {
+    .hero h1 { font-size: 40px; }
+    .looks, .reglas, .compl-grid { grid-template-columns: 1fr; }
+    .momento h2 { font-size: 34px; }
+  }
+</style>
+</head>
+<body>
+
+  <div class="hero">
+    <div class="discos">
+      <div class="disco sol"></div>
+      <div class="disco luna"></div>
+    </div>
+    <div class="kicker">Mhares Sea Club · August 12th 2026 · Mallorca</div>
+    <h1>The End of<br>the World <em>Party</em></h1>
+    <div class="sub">Dress code · EoW Vibes</div>
+  </div>
+
+  <div class="wrap">
+
+    <div class="intro">
+      <p>“… And as the eclipse approaches, MHARES becomes<br>
+      an unexpected gathering point for every<br>
+      possible way of facing the end of the world.”</p>
+    </div>
+
+    <div class="paleta">
+      <div class="swatches">
+        <div class="sw"><div class="dot" style="background:#2b3340"></div><span>Sunset blue</span></div>
+        <div class="sw"><div class="dot" style="background:#e8c98a"></div><span>Sun gold</span></div>
+        <div class="sw"><div class="dot" style="background:#c98a63"></div><span>Terracotta</span></div>
+        <div class="sw"><div class="dot" style="background:#c8ccd2"></div><span>Silver</span></div>
+        <div class="sw"><div class="dot" style="background:#d9c4a0"></div><span>Sand</span></div>
+        <div class="sw"><div class="dot" style="background:linear-gradient(135deg,#e8c98a,#8a8a92)"></div><span>Metallic sheen</span></div>
+      </div>
+    </div>
+
+    <div class="momento">
+      <div class="tag">The moment of the eclipse</div>
+      <h2>EoW Party</h2>
+      <div class="hora">6:00 PM – 12:00 AM · Maximum eclipse 8:32 PM · Dramatic sunset</div>
+      <div class="lead">Look inspirations so you —or your group— can let your creativity run wild:</div>
+    </div>
+
+    <div class="looks">
+      <div class="look">
+        <h3>Cosmic silver</h3>
+        <p>A dress in metallic or liquid fabric that catches the last light of the sun before darkness. Flowing, column or with a slit. Cosmic glamour in its purest form.</p>
+        <span class="pieza">Silver · Metallic</span>
+      </div>
+      <div class="look">
+        <h3>Midnight blue</h3>
+        <p>Silk or satin in deep blue, draped and elegant. Minimal yet dramatic, like the sky just before the eclipse. Pair it with astral gold jewellery.</p>
+        <span class="pieza">Night blue</span>
+      </div>
+      <div class="look">
+        <h3>Mediterranean splendour</h3>
+        <p>Sand, off-white, toasted gold. Satin or chiffon that flows with the sea breeze at sunset. Summer decadence done elegantly — the relaxed luxury of facing the end of the world by the coast.</p>
+        <span class="pieza">Sand · Off-white</span>
+      </div>
+      <div class="look">
+        <h3>Astral tunic</h3>
+        <p>A flowing tunic-style dress with a goddess drape, in silver, off-white or black. The “beautiful cult” touch — tunics welcome as long as they’re pretty and mystical in just the right measure. Thin-strap sandals or a foot jewel.</p>
+        <span class="pieza">Goddess · Ethereal</span>
+      </div>
+      <div class="look">
+        <h3>Shine &amp; sparkle</h3>
+        <p>Sequins, rhinestones, iridescent fabric. Here shine is welcome without limits: apocalyptic psychedelia, reflections that shift with the eclipse light. The more cosmic, the better.</p>
+        <span class="pieza">Sparkle · Psychedelia</span>
+      </div>
+      <div class="look">
+        <h3>Mystic new age</h3>
+        <p>Cosmic spirituality, chic edition: ethereal kaftans, chiffons, lunar tones. Solar-guru energy but tasteful. Astral details, amulets, floating layers.</p>
+        <span class="pieza">Mystic · New age</span>
+      </div>
+    </div>
+
+    <div class="compl">
+      <div class="tag">80% of the look</div>
+      <h2>Accessories are everything</h2>
+      <div class="compl-grid">
+        <div>
+          <h3>Sunglasses at night</h3>
+          <p>Yes, sunglasses at sunset and after dark. Metallic cat-eye, silver or gold frames, mirrored lenses. The most “end of the world, but cool” gesture there is.</p>
+        </div>
+        <div>
+          <h3>Celestial jewellery</h3>
+          <p>Moons, stars, suns. Gold or silver, statement yet elegant. Long drop earrings, astral necklaces, cosmic rings. The detail that ties the whole concept together.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="reglas">
+      <div class="regla si">
+        <h4>EoW says yes to:</h4>
+        <ul>
+          <li>Elegant looks with a strange twist</li>
+          <li>Sunglasses at night</li>
+          <li>Shine and sparkle</li>
+          <li>Astral and futuristic details</li>
+          <li>Apocalyptic psychedelia</li>
+          <li>New age spirituality</li>
+          <li>Cult tunics — pretty and mystical in just the right measure</li>
+        </ul>
+      </div>
+      <div class="regla no">
+        <h4>EoW says no to:</h4>
+        <ul>
+          <li>Full costumes</li>
+          <li>Over-the-top makeup (there’ll be many of you and few mirrors)</li>
+          <li>Masks</li>
+          <li>A plain beachy or summery look: we’re after something theatrical, creative and memorable — but subtle</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="cierre">
+      <p>The end of the world,<br>but in good taste.</p>
+      <div class="small">EoW Vibes · Mhares Sea Club</div>
+    </div>
+
+  </div>
+
+</body>
+</html>
