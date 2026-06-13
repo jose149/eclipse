@@ -24,14 +24,16 @@ export default function Home() {
 
   return (
     <section id="home" className="home">
-      <Image
-                  src="/logo3.jpg"
-                  alt="Mhares Sea Club"
-                  width={530}
-                  height={265}
-                  priority={false}
-                  style={{ marginBottom: "32px", marginTop: "32px" }}
-                />
+      <div className="home__top-image">
+  <Image
+    src="/logo3.jpg"
+    alt="Mhares Sea Club"
+    fill
+    priority={false}
+    sizes="(max-width: 640px) 100vw, 530px"
+    className="home__top-image-img"
+  />
+</div>
       <div className="home__inner">
 
         <div className="home__hero">
