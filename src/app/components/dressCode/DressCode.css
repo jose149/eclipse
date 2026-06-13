@@ -1,9 +1,9 @@
 .dress-code {
   width: 100%;
-  padding: 42px 24px 30px;
+  padding: clamp(54px, 6vw, 82px) 24px clamp(72px, 8vw, 104px);
   color: var(--color-ink);
   display: flex;
-    flex-direction: column;
+  flex-direction: column;
 }
 
 .dress-code__inner {
@@ -13,7 +13,8 @@
 }
 
 .dress-code__button {
-  margin: 80px auto 42px;
+  align-self: center;
+  margin: clamp(24px, 4.5vw, 52px) auto clamp(36px, 5vw, 64px);
 }
 
 .dress-code__header {
@@ -389,11 +390,15 @@
 
 @media (max-width: 760px) {
   .dress-code {
-    padding: 88px 22px 104px;
+    padding: 64px 22px 92px;
+  }
+
+  .dress-code__button {
+    margin: 18px auto 42px;
   }
 
   .dress-code__header {
-    margin-bottom: 56px;
+    margin-bottom: 52px;
     text-align: left;
   }
 
@@ -431,7 +436,19 @@
 
 @media (max-width: 520px) {
   .dress-code {
-    padding: 76px 18px 88px;
+    padding: 48px 18px 80px;
+  }
+
+  .dress-code__button {
+    width: min(100%, 320px);
+    min-height: 50px;
+    margin: 8px auto 36px;
+    padding: 0 22px;
+    text-align: center;
+  }
+
+  .dress-code__header {
+    margin-bottom: 42px;
   }
 
   .dress-code__character-grid {

@@ -53,12 +53,6 @@ export default function DressCode() {
           <h2 className="dress-code__title">{t("dressCode.title")}</h2>
 
           <p className="dress-code__subtitle">{t("dressCode.subtitle")}</p>
-
-          <div className="dress-code__intro">
-            {intro.map((paragraph) => (
-              <p key={paragraph}>{paragraph}</p>
-            ))}
-          </div>
         </header>
 
         <section
