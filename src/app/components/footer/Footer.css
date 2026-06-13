@@ -25,6 +25,19 @@
   );
 }
 
+.footer__top-image {
+  position: relative;
+  width: min(100%, 530px);
+  height: 265px;
+  margin: 32px auto;
+  overflow: hidden;
+}
+
+.footer__top-image-img {
+  object-fit: cover;
+  object-position: center center;
+}
+
 .footer__logo-shell {
   display: inline-flex;
   align-items: center;

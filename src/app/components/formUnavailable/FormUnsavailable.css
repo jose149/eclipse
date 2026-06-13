@@ -388,9 +388,15 @@
   }
 }
 
-.form-unavailable__eclipse{
-    margin: auto;
-    width: 74px;
-    height: 100px;
-    margin-bottom: 24px;
+.form__top-image {
+  position: relative;
+  width: min(100%, 530px);
+  height: 265px;
+  margin: 32px auto;
+  overflow: hidden;
+}
+
+.form__top-image-img {
+  object-fit: cover;
+  object-position: center center;
 }

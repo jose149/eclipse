@@ -6,15 +6,18 @@ export default function Footer() {
     <footer className="footer">
       <div className="footer__inner">
         <div className="footer__divider" />
-          <Image
-            src="/logo2.jpg"
-            alt="Mhares Sea Club"
-            width={180}
-            height={80}
-            className="footer__logo"
-            priority={false}
-          />
-      </div>
+        <div className="footer__top-image">
+             <Image
+               src="/logo3.jpg"
+               alt="Mhares Sea Club"
+               fill
+               priority={false}
+               sizes="(max-width: 640px) 100vw, 530px"
+               className="footer__top-image-img"
+             />
+           </div>
+
+           </div>
     </footer>
   );
 }

@@ -117,15 +117,16 @@ if (hasAccess) {
         </header>
 
         <article className="password-gate__card">
-            <Image
-                        src="/logo3.jpg"
-                        alt="Mhares Sea Club"
-                        width={530}
-                        height={265}
-                        className="main__logo"
-                        priority={false}
-                        style={{ marginBottom: "32px", marginTop: "32px" }}
-                      />
+           <div className="password__top-image">
+             <Image
+               src="/logo3.jpg"
+               alt="Mhares Sea Club"
+               fill
+               priority={false}
+               sizes="(max-width: 640px) 100vw, 530px"
+               className="password__top-image-img"
+             />
+           </div>
           
 
           <p className="password-gate__eyebrow">{currentCopy.eyebrow}</p>
