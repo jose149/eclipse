@@ -405,11 +405,11 @@
 }
 
 .home__note-card p {
-  margin: 0;
+  margin: 0 0 16px;
 }
 
 .home__note-title {
-  margin: 0 0 14px;
+  margin: 0 0 28px;
   color: var(--color-deep-blue);
   font-size: 0.78rem;
   font-weight: 700;

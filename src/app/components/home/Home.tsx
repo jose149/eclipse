@@ -62,15 +62,6 @@ export default function Home() {
 
             <p className="home__intro">{t("home.intro")}</p>
 
-            <a
-              type="button"
-              className="home__button home__button--primary home__button--info"
-              href="#eclipse-info"
-              aria-label="Go to information"
-            >
-              {t("home.informationButton")}
-            </a>
-
             <div className="home__actions" />
           </div>
 

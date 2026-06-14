@@ -207,8 +207,10 @@ const resources = {
 
         intro: [
           "Nadie sabe qué va a ocurrir, pero todo el mundo tiene una teoría.",
-          "Algunos creen que comienza una nueva era. Otros creen que todo es una exageración. Algunos buscan una explicación científica. Otros una explicación espiritual.",
-          "Algunos han salido corriendo con lo puesto. Y algunos simplemente han decidido vestirse para la ocasión.",
+          "Algunos creen que comienza una nueva era. Otros creen que todo es una exageración.",
+          "Algunos buscan una explicación científica. Otros una explicación espiritual.",
+          "Algunos han salido corriendo con lo puesto.",
+          "Y algunos simplemente han decidido vestirse para la ocasión."
         ],
 
         charactersLabel: "Así que, por si te inspiran algo",
