@@ -1,10 +1,16 @@
 "use client";
 
-import { useTranslation } from "react-i18next";
+import { Trans, useTranslation } from "react-i18next";
 import Image from "next/image";
 import "./Home.css";
+import {
+  useState,
+} from "react";
+import { useAppContext } from "../../providers/AppContext";
 
 const FORM_URL = "/form"; // Update this URL to the actual form location when available
+
+type TabValue = "home" | "information" | "dresscode";
 
 type ScheduleItem = {
   time: string;
@@ -12,7 +18,17 @@ type ScheduleItem = {
 };
 
 export default function Home() {
-  const { t } = useTranslation();
+   const { language, setLanguage, activeTab, setActiveTab } = useAppContext();
+  const { t, i18n } = useTranslation();
+  
+    const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+    const scrollToSection = (tabValue: TabValue) => {
+    setActiveTab(tabValue);}
+
+    const handleNavigation = (tabValue: TabValue) => {
+    scrollToSection(tabValue);
+    setIsMobileMenuOpen(false);
+  };
 
   const day12Items = t("home.schedule.day12.items", {
     returnObjects: true,
@@ -45,6 +61,15 @@ export default function Home() {
             <p className="home__lead">{t("home.lead")}</p>
 
             <p className="home__intro">{t("home.intro")}</p>
+
+            <a
+              type="button"
+              className="home__button home__button--primary home__button--info"
+              href="#eclipse-info"
+              aria-label="Go to information"
+            >
+              {t("home.informationButton")}
+            </a>
 
             <div className="home__actions" />
           </div>
@@ -137,7 +162,16 @@ export default function Home() {
   </article>
 
   <article className="home__note-card">
-    <p>{t("home.notes.invitation")}</p>
+    <p>
+    <Trans
+      key={i18n.resolvedLanguage ?? i18n.language}
+      t={t}
+      i18nKey="home.notes.invitation"
+      components={{
+        important: <strong className="home__note-strong" />,
+      }}
+    />
+  </p>
   </article>
 </div>
       </div>

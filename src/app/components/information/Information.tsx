@@ -15,6 +15,8 @@ type StoryCard = {
   label: string;
   title: string;
   paragraphs: string[];
+  list?: string[];
+  afterListParagraphs?: string[];
   quote?: string;
   closing?: string;
 };
@@ -62,6 +64,15 @@ export default function Information() {
       paragraphs: t("information.stories.confluence.paragraphs", {
         returnObjects: true,
       }) as string[],
+      list: t("information.stories.confluence.list", {
+        returnObjects: true,
+      }) as string[],
+      afterListParagraphs: t(
+        "information.stories.confluence.afterListParagraphs",
+        {
+          returnObjects: true,
+        }
+      ) as string[],
     },
   ];
 
@@ -69,7 +80,6 @@ export default function Information() {
     <section id="eclipse-info" className="information">
       <div className="information__inner">
         <div className="information__header">
-
           <h2 className="information__title">
             {t("information.title")}
             <span>{t("information.date")}</span>
@@ -151,6 +161,18 @@ export default function Information() {
                 <h4>{story.title}</h4>
 
                 {story.paragraphs.map((paragraph) => (
+                  <p key={paragraph}>{paragraph}</p>
+                ))}
+
+                {story.list && (
+                  <ul className="information__story-list">
+                    {story.list.map((item) => (
+                      <li key={item}>{item}</li>
+                    ))}
+                  </ul>
+                )}
+
+                {story.afterListParagraphs?.map((paragraph) => (
                   <p key={paragraph}>{paragraph}</p>
                 ))}
 

@@ -39,6 +39,22 @@ export default function DressCode() {
 
   return (
     <section id="dress-code" className="dress-code">
+      
+      <div className="dress-code__inner">
+        <header className="dress-code__header">
+
+          <h2 className="dress-code__title">{t("dressCode.title")}</h2>
+
+          <p className="dress-code__subtitle">{t("dressCode.subtitle")}</p>
+
+          <div className="dress-code__intro">
+            {intro.map((paragraph) => (
+              <p key={paragraph}>{paragraph}</p>
+            ))}
+          </div>
+        </header>
+      </div>
+
       <a
         href={language === "es" ? DRESS_CODE_URL_ES : DRESS_CODE_URL_EN}
         target="_blank"
@@ -47,36 +63,6 @@ export default function DressCode() {
       >
         {t("dressCode.button")}
       </a>
-      <div className="dress-code__inner">
-        <header className="dress-code__header">
-
-          <h2 className="dress-code__title">{t("dressCode.title")}</h2>
-
-          <p className="dress-code__subtitle">{t("dressCode.subtitle")}</p>
-        </header>
-
-        <section
-          className="dress-code__characters"
-          aria-label={t("dressCode.charactersTitle")}
-        >
-          <div className="dress-code__section-heading">
-            <p className="dress-code__section-label">
-              {t("dressCode.charactersLabel")}
-            </p>
-
-            <h3>{t("dressCode.charactersTitle")}</h3>
-          </div>
-
-          <div className="dress-code__character-grid">
-            {characters.map((character) => (
-              <article className="dress-code__character-card" key={character}>
-                <span className="dress-code__character-dot" />
-                <p>{character}</p>
-              </article>
-            ))}
-          </div>
-        </section>
-      </div>
     </section>
   );
 }

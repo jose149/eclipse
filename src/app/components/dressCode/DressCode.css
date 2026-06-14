@@ -19,7 +19,7 @@
 
 .dress-code__header {
   max-width: 920px;
-  margin: 0 auto 72px;
+  margin: 0 auto;
   text-align: center;
 }
 
@@ -442,7 +442,7 @@
   .dress-code__button {
     width: min(100%, 320px);
     min-height: 50px;
-    margin: 8px auto 36px;
+    margin: 0 auto 36px;
     padding: 0 22px;
     text-align: center;
   }

@@ -30,13 +30,14 @@ const resources = {
         eyebrow: "Mhares · 12 de agosto de 2026",
         title: "The End of the World Party",
         lead:
-          "Una celebración privada frente al mar para vivir el primer eclipse solar total en la España continental en 114 años.",
+          "Estimados amig@s,",
         intro:
-          "Estimados amig@s, sólo quedan dos meses para el clímax que supondrá este momento mágico y trascendental para nuestra generación. Y merece una celebración a lo grande.",
+          "Sólo quedan dos meses para el clímax que supondrá el primer eclipse solar total en la España continental en 114 años, sin duda será un momento mágico y trascendental para nuestra generación que merece una celebración a lo grande",
         formButton: "Rellenar formulario",
+        informationButton: "Info eclipse",
         eclipseInfo: "Info eclipse",
         message:
-          "Con tal de ultimar todos los detalles, los Hermanos Buades os pedimos por favor que rellenéis el formulario y aprovechamos para daros a continuación información detallada del evento.",
+          "Para ultimar todos los detalles, los Hermanos Buades os pedimos por favor que rellenéis el formulario y aprovechamos para daros a continuación información detallada del evento.",
 
         eventCard: {
           label: "Evento privado",
@@ -54,7 +55,7 @@ const resources = {
             time: "20:30 – 23:30",
             location: "Mariluz – Es Baluard, Palma centro.",
             description:
-              "Velada opcional para romper el hielo entre los invitados y disfrutar de las vistas sobre la muralla y el puerto.",
+              "Velada para romper el hielo entre los invitados y disfrutar de las vistas sobre la muralla y el puerto. SRC (opcional)",
           },
 
           day12: {
@@ -63,7 +64,7 @@ const resources = {
             items: [
               {
                 time: "11:00 – 11:15",
-                text: "Recogida en autobús.",
+                text: "Recogida en autobús en punto de encuentro seleccionado",
               },
               {
                 time: "12:00 – 18:00",
@@ -75,11 +76,11 @@ const resources = {
               },
               {
                 time: "00:00 – 00:30",
-                text: "Vuelta en autocar.",
+                text: "Vuelta en autocar al mismo punto de encuentro (siempre que no se haya acabado el mundo tal como esperamos)",
               },
               {
                 time: "00:30 – indefinido",
-                text: "After party opcional.",
+                text: "After party opcional y hoy por hoy desconocida",
               },
             ],
           },
@@ -97,7 +98,7 @@ const resources = {
     ],
   },
   invitation:
-    "Os recordamos que la invitación es personal, nominal e intransferible, y las plazas son muy limitadas, ya que cada hermano tiene su cupo. Si al final no pudierais asistir, por favor hacédnoslo saber cuánto antes.",
+  "Os recordamos que la invitación es <important>personal, nominal e intransferible</important>, y las plazas son muy limitadas, ya que cada hermano tiene su cupo. Si al final no pudierais asistir, por favor hacédnoslo saber cuánto antes.",
 },
       },
 
@@ -165,21 +166,42 @@ const resources = {
           },
 
           confluence: {
-            number: "03",
-            label: "La confluencia",
-            title: "Todos los caminos llevan al resort",
-            paragraphs: [
-              "Así que, ya sea por miedo, por curiosidad, por respeto, por oportunismo o por hedonismo, al caer la tarde, personas muy distintas comienzan a concentrarse allí, en el resort.",
-              "Buscan verlo con sus propios ojos, quieren ser los primeros, o buscan respuestas, quizás señales, supervivencia, una posición privilegiada, prioridad en el nuevo mundo o simplemente evasión, diversión, compañía y una copa.",
-              "Y mientras el eclipse se aproxima, MHARES se convierte en un inesperado punto de encuentro para todas las formas posibles de enfrentarse al fin del mundo.",
-              "Tú, que tienes motivos de peso, decides también que no puedes faltar.",
-            ],
-          },
+  number: "03",
+  label: "La confluencia",
+  title: "La confluencia",
+  paragraphs: [
+    "Así que, ya sea por miedo, por curiosidad, por respeto, por oportunismo o por hedonismo, al caer la tarde, personas muy distintas comienzan a concentrarse allí, en el resort. ¿Pero quiénes son exactamente? Aún no lo sabemos, pero puede que aparezcan:",
+  ],
+  list: [
+    "Navegantes de recreo queriendo volver a tierra",
+    "Hippies cósmicos",
+    "Milicias veganas",
+    "Gurús solares",
+    "Autoridades locales",
+    "Hordas festivaleras",
+    "Escapados de un after de Magaluf",
+    "Cazadores de ovnis",
+    "Terapeutas alternativos",
+    "Reinas del tarot",
+    "Dimonis de sa Part Forana",
+    "Hare Krishnas, franciscanos y clarisas",
+    "Millonarios organizados con pasajes al nuevo mundo",
+    "Adivinos bronceados",
+    "Los Pet Shop Boys",
+    "Sectarios milenaristas",
+    "O una batukada al completo",
+  ],
+  afterListParagraphs: [
+    "Buscan verlo con sus propios ojos, quieren ser los primeros, o buscan respuestas, quizás señales, supervivencia, una posición privilegiada, prioridad en el nuevo mundo o simplemente evasión, diversión, compañía y una copa.",
+    "Y mientras el eclipse se aproxima, MHARES se convierte en un inesperado punto de encuentro para todas las formas posibles de enfrentarse al fin del mundo.",
+    "Tú, que tienes motivos de peso, decides también que no puedes faltar.",
+  ],
+},
         },
       },
 
       dressCode: {
-        button: "Dress code",
+        button: "Click aquí para inspiración",
         title: "EoW Vibes",
         subtitle: "INSPIRACIÓN & DRESS CODE",
 
@@ -277,9 +299,10 @@ const resources = {
         title: "The End of the World Party",
         lead: "Dear friends,",
         intro:
-          "Only two months remain until the climax of the first total solar eclipse visible from mainland Spain in 114 years. It will undoubtedly be a magical and transcendental moment for our generation — one that deserves a grand celebration.",
+          "Only two months remain until the climax of the first total solar eclipse visible from mainland Spain in 114 years. It will undoubtedly be a magical and transcendental moment for our generation, one that deserves a grand celebration",
         formButton: "Fill in the following form",
         eclipseInfo: "Eclipse info",
+        informationButton: "Eclipse info",
         message:
           "In order to finalise all the details, the Buades Bros kindly ask you to fill in the following form. We also take this opportunity to share detailed information about the event below.",
 
@@ -309,7 +332,7 @@ const resources = {
             items: [
               {
                 time: "11:00 – 11:15",
-                text: "Coach pickup at selected meeting point",
+                text: "Bus pickup at selected meeting point",
               },
               {
                 time: "12:00 – 18:00",
@@ -322,11 +345,11 @@ const resources = {
               {
                 time: "00:00 – 00:30",
                 text:
-                  "Coach return to the same meeting point (assuming the world hasn't ended as expected)",
+                  "Coach return to the same meeting point (as long as the world hasn’t ended as we expect)",
               },
               {
                 time: "00:30 – indefinitely",
-                text: "Optional after-party, details TBC",
+                text: "Optional after-party, location currently unknown",
               },
             ],
           },
@@ -343,7 +366,7 @@ const resources = {
     ],
   },
   invitation:
-    "Please note that the invitation is personal, non-transferable, and spaces are very limited, as each brother has his own quota. If you are unable to attend, please let us know as soon as possible.",
+  "Please note that the invitation is <important>personal and non-transferable</important>, and spaces are very limited, as each brother has his own quota. If you are unable to attend, please let us know as soon as possible.",
 },
       },
 
@@ -411,20 +434,42 @@ const resources = {
           },
 
           confluence: {
-            number: "3",
-            label: "THE CONVERGENCE",
-            title: "THE CONVERGENCE",
-            paragraphs: [
-              "And so, whether out of fear, curiosity, reverence, opportunism, or hedonism, as the afternoon fades, very different people begin to gather there, at the resort.",
-              "They want to see it with their own eyes, to be the first ones there. They seek answers, perhaps signs, survival, a privileged vantage point, priority in the new world — or simply escape, fun, company, and a drink.",
-              "And as the eclipse approaches, MHARES becomes an unexpected meeting point for every possible way of facing the end of the world. You, who have good reason to be there, decide you simply cannot miss it.",
-            ],
-          },
+  number: "03",
+  label: "The confluence",
+  title: "The Confluence",
+  paragraphs: [
+    "So, whether out of fear, curiosity, reverence, opportunism, or hedonism, as evening falls, very different kinds of people begin to gather there, at the resort. But who exactly? We don’t know yet, but among them there may appear:",
+  ],
+  list: [
+    "Recreational sailors wanting to return to shore",
+    "Cosmic hippies",
+    "Vegan militias",
+    "Solar gurus",
+    "Local authorities",
+    "Festival-goers in hordes",
+    "Escapees from a Magaluf after-party",
+    "UFO hunters",
+    "Alternative therapists",
+    "Tarot queens",
+    "Dimonis de sa Part Forana",
+    "Hare Krishnas, Franciscans, and Poor Clares",
+    "Organized millionaires with tickets to the new world",
+    "Tanned fortune tellers",
+    "The Pet Shop Boys",
+    "Millenarian cultists",
+    "Or an entire batucada band",
+  ],
+  afterListParagraphs: [
+    "They seek to witness it with their own eyes, to be the first, or to find answers — perhaps signs, survival, a privileged position, priority in the new world, or simply escape, fun, company, and a drink.",
+    "And as the eclipse draws near, MHARES becomes an unexpected gathering point for every possible way of facing the end of the world.",
+    "You, with good reason, decide that you cannot miss this.",
+  ],
+},
         },
       },
 
       dressCode: {
-        button: "Dress code",
+        button: "Click here for inspiration",
         eyebrow: "LINK 3",
         title: "EoW Vibes",
         subtitle: "Inspiration & Dress Code",

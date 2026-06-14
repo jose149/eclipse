@@ -74,6 +74,8 @@
 
 .home__copy {
   max-width: 760px;
+  display: flex;
+  flex-direction: column;
 }
 
 .home__eyebrow {
@@ -161,6 +163,11 @@
   background: var(--gradient-champagne);
   color: #fff;
   box-shadow: 0 16px 34px rgba(185, 150, 91, 0.24);
+}
+
+.home__button--info {
+  margin-top: 12px;
+  align-self: center;
 }
 
 .home__button--primary:hover {
@@ -390,6 +397,11 @@
   color: var(--color-soft-muted);
   font-size: 0.94rem;
   line-height: 1.75;
+}
+
+.home__note-strong {
+  color: var(--color-deep-blue);
+  font-weight: 800;
 }
 
 .home__note-card p {
