@@ -45,7 +45,7 @@ export default function Home() {
     src="/logo3.jpg"
     alt="Mhares Sea Club"
     fill
-    priority={false}
+    priority
     sizes="(max-width: 640px) 100vw, 530px"
     className="home__top-image-img"
   />
@@ -61,6 +61,15 @@ export default function Home() {
             <p className="home__lead">{t("home.lead")}</p>
 
             <p className="home__intro">{t("home.intro")}</p>
+
+             <a
+              type="button"
+              className="home__button home__button--primary home__button--info"
+              href="#eclipse-info"
+              aria-label="Go to information"
+            >
+              {t("home.informationButton")}
+            </a>
 
             <div className="home__actions" />
           </div>
@@ -127,11 +136,7 @@ export default function Home() {
               {day12Items.map((item, index) => (
                 <li key={`${item.time}-${item.text}`}>
                   <strong>{item.time}</strong>
-                  <span>{item.text} {index === 2 && (
-                    <a  style={{ textDecoration: 'underline' }} href={FORM_URL} className="home__schedule__link"> 
-                      Dress code
-                    </a>
-                  )}</span>
+                  <span>{item.text} </span>
                   
                 </li>
               ))}
