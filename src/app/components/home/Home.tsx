@@ -104,6 +104,8 @@ export default function Home() {
           <a
             href={FORM_URL}
             className="home__button home__button--primary"
+            target="_blank"
+            rel="noopener noreferrer"
           >
             {t("home.formButton")}
           </a>
