@@ -8,7 +8,7 @@ import {
 } from "react";
 import { useAppContext } from "../../providers/AppContext";
 
-const FORM_URL = "/form"; // Update this URL to the actual form location when available
+const FORM_URL = "https://forms.gle/bY5ayA9AjNRHbEKK9"; // Update this URL to the actual form location when available
 
 type TabValue = "home" | "information" | "dresscode";
 
