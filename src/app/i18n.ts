@@ -68,11 +68,11 @@ const resources = {
               },
               {
                 time: "12:00 – 18:00",
-                text: "Day Party by the pool. Dress code: Mediterranean casual.",
+                text: "Day Party by the pool. Dress code: Mediterranean casual",
               },
               {
                 time: "18:00 – 00:00",
-                text: "EoW Party & Eclipse. Dress code: EoW vibes.",
+                text: "EoW Party & Eclipse. Dress code: EoW vibes",
               },
               {
                 time: "00:00 – 00:30",
@@ -83,6 +83,7 @@ const resources = {
                 text: "After party opcional y hoy por hoy desconocida",
               },
             ],
+            music: "Amenizacion musical a cargo de DJ Sol 🌞 and DJ Luna 🌑",
           },
         },
 
@@ -354,6 +355,7 @@ const resources = {
                 text: "Optional after-party, location currently unknown",
               },
             ],
+            music: "A musical journey led by DJ Sol 🌞 and DJ Luna 🌑",
           },
         },
 

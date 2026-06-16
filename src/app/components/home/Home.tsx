@@ -143,6 +143,9 @@ export default function Home() {
                 </li>
               ))}
             </ul>
+            <p className="home__music-note" style={{ marginTop: "24px" }}>
+              {t("home.schedule.day12.music")}
+            </p>
           </article>
         </div>
 

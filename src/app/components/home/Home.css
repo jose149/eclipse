@@ -418,6 +418,20 @@
   text-transform: uppercase;
 }
 
+.home__music-note {
+  margin: 26px 0 0;
+  padding: 18px 20px;
+  border: 1px solid rgba(185, 150, 91, 0.2);
+  border-radius: 20px;
+  background: rgba(251, 247, 239, 0.72);
+  color: var(--color-deep-blue);
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(1rem, 1.5vw, 1.18rem);
+  font-style: italic;
+  line-height: 1.6;
+  text-align: center;
+}
+
 .home__amenities-list {
   display: grid;
   gap: 8px;
