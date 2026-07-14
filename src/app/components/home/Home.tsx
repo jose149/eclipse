@@ -62,7 +62,6 @@ export default function Home() {
 
           <strong>{currentCountdownCopy.value}</strong>
 
-          <span>{currentCountdownCopy.detail}</span>
         </div>
       </div>
 
