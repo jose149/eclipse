@@ -6,6 +6,8 @@ import { useAppContext } from "../../providers/AppContext";
 import "./Home.css";
 
 const FORM_URL = "https://forms.gle/bY5ayA9AjNRHbEKK9";
+const GALLERY_URL =
+  "https://drive.google.com/drive/folders/1nN_SOsmaxQJerxm56v_CJWlAr_CPpIpV?usp=drive_link";
 
 type ScheduleItem = {
   time: string;
@@ -15,13 +17,26 @@ type ScheduleItem = {
 const countdownCopy = {
   es: {
     aria: "Cuenta atrás para el evento",
-    kicker: "Cuenta atrás",
-    value: "Solo falta 1 mes",
+    value: "Evento finalizado",
   },
   en: {
     aria: "Countdown to the event",
-    kicker: "Countdown",
-    value: "Only 1 month to go",
+    value: "Event completed",
+  },
+};
+
+const galleryCopy = {
+  es: {
+    kicker: "Galería",
+    title: "Recuerdos del fin del mundo",
+    text: "Accede al álbum completo del evento con todas las fotos compartidas.",
+    button: "Ver galería completa",
+  },
+  en: {
+    kicker: "Gallery",
+    title: "Memories from the end of the world",
+    text: "Access the full event album with all the shared photos.",
+    button: "View full gallery",
   },
 };
 
@@ -30,6 +45,7 @@ export default function Home() {
   const { t, i18n } = useTranslation();
 
   const currentCountdownCopy = countdownCopy[language];
+  const currentGalleryCopy = galleryCopy[language];
 
   const day12Items = t("home.schedule.day12.items", {
     returnObjects: true,
@@ -56,13 +72,25 @@ export default function Home() {
         <span className="home__countdown-orb" aria-hidden="true" />
 
         <div className="home__countdown-copy">
-          <span className="home__countdown-kicker">
-            {currentCountdownCopy.kicker}
-          </span>
-
           <strong>{currentCountdownCopy.value}</strong>
-
         </div>
+      </div>
+
+      <div className="home__gallery-card">
+        <p className="home__gallery-kicker">{currentGalleryCopy.kicker}</p>
+
+        <h2>{currentGalleryCopy.title}</h2>
+
+        <p>{currentGalleryCopy.text}</p>
+
+        <a
+          href={GALLERY_URL}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="home__button home__button--primary"
+        >
+          {currentGalleryCopy.button}
+        </a>
       </div>
 
       <div className="home__inner">
@@ -112,9 +140,7 @@ export default function Home() {
 
             <p className="home__card-place">{t("home.eventCard.place")}</p>
 
-            <p className="home__card-text">
-              {t("home.eventCard.description")}
-            </p>
+            <p className="home__card-text">{t("home.eventCard.description")}</p>
           </aside>
         </div>
 
