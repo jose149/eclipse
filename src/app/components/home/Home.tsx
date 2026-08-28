@@ -7,7 +7,7 @@ import "./Home.css";
 
 const FORM_URL = "https://forms.gle/bY5ayA9AjNRHbEKK9";
 const GALLERY_URL =
-  "https://drive.google.com/drive/folders/1nN_SOsmaxQJerxm56v_CJWlAr_CPpIpV?usp=drive_link";
+  "https://drive.google.com/drive/folders/1NW-Pb4bTWUeuFU1VbHlkbCDIxYmarA2s?usp=drive_link";
 
 type ScheduleItem = {
   time: string;
